@@ -1,7 +1,6 @@
 {
-    "name": "hello-world",
+    "name": "public-dynamic-features",
     "type": "section",
-    "wewebPublic": "true",
     "repository": {
         "type": "git",
         "url": "https://github.com/WeWeb-Public/wwSection"
@@ -38,7 +37,7 @@
         "webpack": "^4.9.1",
         "webpack-cli": "^2.1.4",
         "webpack-dev-server": "^3.1.14",
-        "weweb-client": "^1.0.30"
+        "weweb-client": "^1.0.33"
     },
     "browserslist": [
         "> 1%",
