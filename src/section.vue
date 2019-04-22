@@ -348,9 +348,10 @@ export default {
 .features {
     display: flex;
     justify-content: center;
-    width: 90%;
-    margin-left: 5%;
+    width: 65%;
+    margin-left: 17.5%;
     margin-top: 50px;
+    flex-wrap: wrap;
     @media (min-width: 768px) {
         width: 80%;
         margin-left: 10%;
@@ -365,9 +366,12 @@ export default {
     }
     .feature {
         position: relative;
-        width: 200px;
-        margin-right: 20px;
+        padding: 10px;
+        flex-basis: 33.33333%;
         cursor: pointer;
+        @media (min-width: 768px) {
+            flex-basis: 20%;
+        }
     }
     .selected-feature-image {
         border-color: blue;
