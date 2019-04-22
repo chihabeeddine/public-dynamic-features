@@ -1,11 +1,11 @@
 module.exports = [
     {
-        name: 'my_section',
+        name: 'product-team',
         storeName: {
-            en_GB: "My first section"
+            en_GB: "Product team"
         },
         storeDesc: {
-            en_GB: "Template for my first section"
+            en_GB: "Feature section with a product team example"
         }
     }
 ]

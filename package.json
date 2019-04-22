@@ -3,9 +3,9 @@
     "type": "section",
     "repository": {
         "type": "git",
-        "url": "https://github.com/WeWeb-Public/wwSection"
+        "url": "https://github.com/WeWeb-Public/public-dynamic-features"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "private": true,
     "scripts": {
         "build": "weweb-build",

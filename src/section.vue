@@ -16,7 +16,8 @@
                 <wwContextMenu tag="div" class="contextmenu" v-if="editMode" @ww-add-before="addFeature(index, 'before')" @ww-add-after="addFeature(index, 'after')" @ww-remove="removeFeature(index)">
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
-                <wwObject v-bind:ww-object="feature.selector"></wwObject>
+                <wwObject v-bind:ww-object="feature.selector.image" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
+                <wwObject v-bind:ww-object="feature.selector.label" :class="{'selected-feature-label': index == selectedFeatureIndex}"></wwObject>
             </div>
         </div>
         <div class="content">
@@ -67,22 +68,33 @@ export default {
         if (!this.section.data.features || this.section.data.features == 0) {
             needUpdate = true
             this.section.data.features = [{
-                selector: wwLib.wwObject.getDefault({
-                    type: 'ww-image',
-                    data: {
-                        url: 'https://cdn.weweb.app/public/images/no_image_selected.png'
-                    }
-                }),
+                selector: {
+                    image: wwLib.wwObject.getDefault({
+                        type: 'ww-image',
+                        data: {
+                            url: 'https://cdn.weweb.app/public/images/no_image_selected.png'
+                        }
+                    }),
+                    label: wwLib.wwObject.getDefault({ type: 'ww-text' })
+                },
                 content: wwLib.wwObject.getDefault({
                     type: 'ww-columns'
                 })
             }];
-            console.log(this.section.data.features)
         }
 
         if (needUpdate) {
             this.sectionCtrl.update(this.section);
         }
+
+        this.selectNextfeatureInterval = setInterval(() => {
+            if (this.editMode) return;
+            if (this.section.data.features.length - 1 == this.selectedFeatureIndex) {
+                this.selectedFeatureIndex = 0
+            } else {
+                this.selectedFeatureIndex++
+            }
+        }, 3000);
 
 
     },
@@ -92,12 +104,15 @@ export default {
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
             const newFeature = {
-                selector: wwLib.wwObject.getDefault({
-                    type: 'ww-image',
-                    data: {
-                        url: 'https://cdn.weweb.app/public/images/no_image_selected.png'
-                    }
-                }),
+                selector: {
+                    image: wwLib.wwObject.getDefault({
+                        type: 'ww-image',
+                        data: {
+                            url: 'https://cdn.weweb.app/public/images/no_image_selected.png'
+                        }
+                    }),
+                    label: wwLib.wwObject.getDefault({ type: 'ww-text' })
+                },
                 content: wwLib.wwObject.getDefault({
                     type: 'ww-columns',
                     "data": {
@@ -299,7 +314,6 @@ export default {
                     }
                 })
             }
-            console.log(newFeature)
             this.section.data.features.splice(index, 0, newFeature);
             this.sectionCtrl.update(this.section);
         },
@@ -312,7 +326,7 @@ export default {
         },
         /* wwManager:end */
         selectFeature(index) {
-            console.log(index)
+            clearInterval(this.selectNextfeatureInterval);
             this.selectedFeatureIndex = index
         }
     }
@@ -334,14 +348,32 @@ export default {
 .features {
     display: flex;
     justify-content: center;
-    width: 60%;
-    margin-left: 20%;
+    width: 90%;
+    margin-left: 5%;
     margin-top: 50px;
+    @media (min-width: 768px) {
+        width: 80%;
+        margin-left: 10%;
+    }
+    @media (min-width: 992px) {
+        width: 60%;
+        margin-left: 20%;
+    }
+    @media (min-width: 1200px) {
+        width: 50%;
+        margin-left: 25%;
+    }
     .feature {
         position: relative;
         width: 200px;
         margin-right: 20px;
         cursor: pointer;
+    }
+    .selected-feature-image {
+        border-color: blue;
+    }
+    .selected-feature-label {
+        color: #ce003b;
     }
     /* wwManager:start */
     .contextmenu {
