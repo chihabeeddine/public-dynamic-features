@@ -12,7 +12,7 @@
         <wwObject class="background" :ww-object="section.data.bg" ww-category="background"></wwObject>
 
         <div class="root-features">
-            <div class="root-feature" v-for="(rootFeature, index) in section.data.rootFeatures" :key="rootFeature" @click="selectRootFeature(index)">
+            <div class="root-feature" v-for="(rootFeature, index) in section.data.rootFeatures" :key="rootFeature.uniqueId" @click="selectRootFeature(index)">
                 <wwContextMenu
                     tag="div"
                     class="contextmenu"
@@ -23,33 +23,26 @@
                 >
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
-
                 <wwObject tag="div" :ww-object="rootFeature.root"></wwObject>
-                <div class="features">
-                    <!-- <div class="feature" v-for="(feature, index) in rootFeature" :key="feature.selector.uniqueId" @click="selectFeature(index)"> -->
-                    <div class="feature" v-for="(feature, index) in rootFeature.features" :key="feature" @click="selectFeature(index)">
-                        <wwContextMenu
-                            tag="div"
-                            class="contextmenu"
-                            v-if="editMode"
-                            @ww-add-before="addFeature(rootFeature.features, index, 'before')"
-                            @ww-add-after="addFeature(rootFeature.features, index, 'after')"
-                            @ww-remove="removeFeature(rootFeature.features, index)"
-                        >
-                            <div class="wwi wwi-config"></div>
-                        </wwContextMenu>
-                        <wwLayoutColumn
-                            tag="div"
-                            ww-default="ww-text"
-                            :ww-list="feature.selector.title"
-                            @ww-add="add(feature.selector.title, $event)"
-                            @ww-remove="remove(feature.selector.title, $event)"
-                        >
-                            <wwObject tag="div" v-for="title in feature.selector.title" :key="title.uniqueId" :ww-object="title" 
-                                :class="{'selected-feature-image': index == selectedFeatureIndex}">
-                            </wwObject>
-                        </wwLayoutColumn>
-                    </div>
+            </div>
+        </div>
+
+        <div v-for="(rootFeature) in section.data.rootFeatures" :key="rootFeature.uniqueId">
+            <div class="features" v-if="rootFeature.root.uniqueId == section.data.rootFeatures[selectedRootFeature].root.uniqueId">
+                <div class="feature" v-for="(feature, index) in rootFeature.features" :key="feature.selector.uniqueId" @click="selectFeature(index)">
+                    <wwContextMenu
+                        tag="div"
+                        class="contextmenu"
+                        v-if="editMode"
+                        @ww-add-before="addFeature(rootFeature.features, index, 'before')"
+                        @ww-add-after="addFeature(rootFeature.features, index, 'after')"
+                        @ww-remove="removeFeature(rootFeature.features, index)"
+                    >
+                        <div class="wwi wwi-config"></div>
+                    </wwContextMenu>
+                    <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="feature.selector.title" @ww-add="add(feature.selector.title, $event)" @ww-remove="remove(feature.selector.title, $event)">
+                        <wwObject tag="div" v-for="title in feature.selector.title" :key="title.uniqueId" :ww-object="title" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
+                    </wwLayoutColumn>
                 </div>
             </div>
         </div>
@@ -181,9 +174,6 @@ export default {
             this.section.data.rootFeatures.splice(index, 0, newRootFeature);
             this.sectionCtrl.update(this.section);
         },
-
-
-
 
         addFeature(list, _index, where) {
             console.log('list:', list)
