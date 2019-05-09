@@ -6,22 +6,49 @@
 <template>
     <div>
         <!-- wwManager:start -->
-        <wwSectionEditMenu v-bind:sectionCtrl="sectionCtrl"></wwSectionEditMenu>
+        <wwSectionEditMenu :sectionCtrl="sectionCtrl"></wwSectionEditMenu>
         <!-- wwManager:end -->
         <!-- Weweb Wallpaper -->
-        <wwObject class="background" v-bind:ww-object="section.data.bg" ww-category="background"></wwObject>
+        <wwObject class="background" :ww-object="section.data.bg" ww-category="background"></wwObject>
 
-        <div class="features">
-            <div class="feature" v-for="(feature, index) in section.data.features" :key="feature.selector.uniqueId" @click="selectFeature(index)">
-                <wwContextMenu tag="div" class="contextmenu" v-if="editMode" @ww-add-before="addFeature(index, 'before')" @ww-add-after="addFeature(index, 'after')" @ww-remove="removeFeature(index)">
+        <div class="root-features">
+            <div class="root-feature" v-for="(rootFeature, index) in section.data.rootFeatures" :key="rootFeature" @click="selectRootFeature(index)">
+                <wwContextMenu
+                    tag="div"
+                    class="contextmenu"
+                    v-if="editMode"
+                    @ww-add-before="addRootFeature(index, 'before')"
+                    @ww-add-after="addRootFeature(index, 'after')"
+                    @ww-remove="removeRootFeature(index)"
+                >
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
-                <wwObject v-bind:ww-object="feature.selector.image" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
-                <wwObject v-bind:ww-object="feature.selector.label" :class="{'selected-feature-label': index == selectedFeatureIndex}"></wwObject>
+
+                <wwObject tag="div" :ww-object="rootFeature.root"></wwObject>
+                <div class="features">
+                    <!-- <div class="feature" v-for="(feature, index) in rootFeature" :key="feature.selector.uniqueId" @click="selectFeature(index)"> -->
+                    <div class="feature" v-for="(feature, index) in rootFeature.features" :key="feature" @click="selectFeature(index)">
+                        <wwContextMenu
+                            tag="div"
+                            class="contextmenu"
+                            v-if="editMode"
+                            @ww-add-before="addFeature(rootFeature.features, index, 'before')"
+                            @ww-add-after="addFeature(rootFeature.features, index, 'after')"
+                            @ww-remove="removeFeature(rootFeature.features, index)"
+                        >
+                            <div class="wwi wwi-config"></div>
+                        </wwContextMenu>
+                        <wwObject :ww-object="feature.selector.title" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
+                        <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="feature.selector.titles" @ww-add="add(feature.selector.title, $event)" @ww-remove="remove(feature, $event)">
+                            <wwObject tag="div" v-for="title in feature.title" :key="title.uniqueId" :ww-object="title"></wwObject>
+                        </wwLayoutColumn>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="content">
-            <wwObject v-bind:ww-object="section.data.features[selectedFeatureIndex].content"></wwObject>
+            <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].content"></wwObject>
         </div>
     </div>
 </template>
@@ -37,6 +64,7 @@ export default {
     },
     data() {
         return {
+            selectedRootFeature: 0,
             selectedFeatureIndex: 0
         }
     },
@@ -64,270 +92,327 @@ export default {
                 type: 'ww-color'
             });
         }
-
-        if (!this.section.data.features || this.section.data.features == 0) {
+        if (!this.section.data.rootFeatures) {
             needUpdate = true
-            this.section.data.features = [{
-                selector: {
-                    image: wwLib.wwObject.getDefault({
-                        type: 'ww-image',
-                        data: {
-                            url: 'https://cdn.weweb.app/public/images/no_image_selected.png'
+            this.section.data.rootFeatures = [{
+                root: wwLib.wwObject.getDefault({
+                    type: 'ww-text',
+                    data: {
+                        text: {
+                            en: "E-shop",
+                            fr: "E-commerce"
                         }
-                    }),
-                    label: wwLib.wwObject.getDefault({ type: 'ww-text' })
-                },
-                content: wwLib.wwObject.getDefault({
-                    type: 'ww-columns'
-                })
+                    }
+                }),
+                features: [{
+                    selector: {
+                        title: wwLib.wwObject.getDefault({
+                            type: 'ww-text',
+                            data: {
+                                text: {
+                                    en: "Starter",
+                                    fr: "Starter"
+                                }
+                            }
+                        })
+                    },
+                    content: wwLib.wwObject.getDefault({
+                        type: 'ww-columns',
+                        data: this.newColumns()
+                    })
+                }]
             }];
         }
 
         if (needUpdate) {
             this.sectionCtrl.update(this.section);
         }
-
-        this.selectNextfeatureInterval = setInterval(() => {
-            if (this.editMode) return;
-            if (this.section.data.features.length - 1 == this.selectedFeatureIndex) {
-                this.selectedFeatureIndex = 0
-            } else {
-                this.selectedFeatureIndex++
-            }
-        }, 3000);
-
-
+        console.log('this.section.data.rootFeatures:', this.section.data.rootFeatures)
     },
     methods: {
         /* wwManager:start */
-        addFeature(_index, where) {
+        addRootFeature(_index, where) {
+            const up = (where == 'after') ? parseInt(1) : 0;
+            const index = _index + up
+            const newRootFeature = {
+                root: wwLib.wwObject.getDefault({
+                    type: 'ww-text',
+                    data: {
+                        text: {
+                            en: "E-shop",
+                            fr: "E-commerce"
+                        }
+                    }
+                }),
+                features: [{
+                    selector: {
+                        title: wwLib.wwObject.getDefault({
+                            type: 'ww-text',
+                            data: {
+                                text: {
+                                    en: "Starter",
+                                    fr: "Starter"
+                                }
+                            }
+                        })
+                    },
+                    content: wwLib.wwObject.getDefault({
+                        type: 'ww-columns',
+                        data: this.newColumns()
+                    })
+                }]
+            }
+            //splice the new feature
+            this.section.data.rootFeatures.splice(index, 0, newRootFeature);
+            this.sectionCtrl.update(this.section);
+
+
+        },
+
+        addFeature(list, _index, where) {
+            console.log('list:', list)
+
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
             const newFeature = {
                 selector: {
-                    image: wwLib.wwObject.getDefault({
-                        type: 'ww-image',
+                    title: wwLib.wwObject.getDefault({
+                        type: 'ww-text',
                         data: {
-                            url: 'https://cdn.weweb.app/public/images/no_image_selected.png'
+                            text: {
+                                en: "Starter",
+                                fr: "Starter"
+                            }
                         }
-                    }),
-                    label: wwLib.wwObject.getDefault({ type: 'ww-text' })
+                    })
                 },
                 content: wwLib.wwObject.getDefault({
                     type: 'ww-columns',
-                    "data": {
-                        "config": {
-                            "count": 1,
-                            "xs": {
-                                "height": null,
-                                "ignore": false,
-                                "cols": [
-                                    {
-                                        "offset": 0,
-                                        "width": 33.33,
-                                        "borders": [],
-                                        "align": "1"
-                                    },
-                                    {
-                                        "offset": 0,
-                                        "width": 33.33,
-                                        "borders": [],
-                                        "align": "1"
-                                    },
-                                    {
-                                        "offset": 0,
-                                        "width": 33.33,
-                                        "borders": [],
-                                        "align": "1"
-                                    }
-                                ]
-                            },
-                            "sm": {
-                                "ignore": true,
-                                "cols": []
-                            },
-                            "md": {
-                                "ignore": true,
-                                "cols": []
-                            },
-                            "lg": {
-                                "ignore": true,
-                                "cols": []
-                            },
-                            "height": null
-                        },
-                        "columns": [
-                            {
-                                "background": {
-                                    "uniqueId": 11452749013,
-                                    "wwVersion": 3,
-                                    "content": {
-                                        "type": "ww-color",
-                                        "data": {
-                                            "backgroundColor": "transparent",
-                                            "style": {
-                                                "borderRadius": 0,
-                                                "borderWidth": 0,
-                                                "borderColor": null,
-                                                "borderStyle": null,
-                                                "boxShadow": {
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "b": 0,
-                                                    "s": 0,
-                                                    "c": ""
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "link": {
-                                        "type": "none",
-                                        "data": {}
-                                    },
-                                    "ratio": -1,
-                                    "paddings": {
-                                        "xs": {
-                                            "top": 0,
-                                            "left": 0,
-                                            "right": 0,
-                                            "bottom": 0
-                                        },
-                                        "md": {
-                                            "top": 0,
-                                            "left": 0,
-                                            "right": 0,
-                                            "bottom": 0
-                                        }
-                                    },
-                                    "hidden": false,
-                                    "tags": [],
-                                    "children": {},
-                                    "data": {},
-                                    "anim": {},
-                                    "new": false
-                                },
-                                "wwObjects": []
-                            },
-                            {
-                                "background": {
-                                    "uniqueId": 5073082716,
-                                    "wwVersion": 3,
-                                    "content": {
-                                        "type": "ww-color",
-                                        "data": {
-                                            "backgroundColor": "transparent",
-                                            "style": {
-                                                "borderRadius": 0,
-                                                "borderWidth": 0,
-                                                "borderColor": null,
-                                                "borderStyle": null,
-                                                "boxShadow": {
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "b": 0,
-                                                    "s": 0,
-                                                    "c": ""
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "link": {
-                                        "type": "none",
-                                        "data": {}
-                                    },
-                                    "ratio": -1,
-                                    "paddings": {
-                                        "xs": {
-                                            "top": 0,
-                                            "left": 0,
-                                            "right": 0,
-                                            "bottom": 0
-                                        },
-                                        "md": {
-                                            "top": 0,
-                                            "left": 0,
-                                            "right": 0,
-                                            "bottom": 0
-                                        }
-                                    },
-                                    "hidden": false,
-                                    "tags": [],
-                                    "children": {},
-                                    "data": {},
-                                    "anim": {},
-                                    "new": false
-                                },
-                                "wwObjects": []
-                            },
-                            {
-                                "background": {
-                                    "uniqueId": 2089555755,
-                                    "wwVersion": 3,
-                                    "content": {
-                                        "type": "ww-color",
-                                        "data": {
-                                            "backgroundColor": "transparent",
-                                            "style": {
-                                                "borderRadius": 0,
-                                                "borderWidth": 0,
-                                                "borderColor": null,
-                                                "borderStyle": null,
-                                                "boxShadow": {
-                                                    "x": 0,
-                                                    "y": 0,
-                                                    "b": 0,
-                                                    "s": 0,
-                                                    "c": ""
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "link": {
-                                        "type": "none",
-                                        "data": {}
-                                    },
-                                    "ratio": -1,
-                                    "paddings": {
-                                        "xs": {
-                                            "top": 0,
-                                            "left": 0,
-                                            "right": 0,
-                                            "bottom": 0
-                                        },
-                                        "md": {
-                                            "top": 0,
-                                            "left": 0,
-                                            "right": 0,
-                                            "bottom": 0
-                                        }
-                                    },
-                                    "hidden": false,
-                                    "tags": [],
-                                    "children": {},
-                                    "data": {},
-                                    "anim": {},
-                                    "new": false
-                                },
-                                "wwObjects": []
-                            }
-                        ]
-                    }
+                    data: this.newColumns()
                 })
             }
-            this.section.data.features.splice(index, 0, newFeature);
+
+            list.splice(index, 0, newFeature);
+            //this.section.data.features.splice(index, 0, newFeature);
             this.sectionCtrl.update(this.section);
         },
-        removeFeature(index) {
-            this.section.data.features.splice(index, 1);
-            if (!this.section.data.features.length) {
+        newColumns() {
+            const newColumn = {
+                "config": {
+                    "count": 2,
+                    "xs": {
+                        "height": null,
+                        "ignore": false,
+                        "cols": [
+                            {
+                                "offset": 0,
+                                "width": 70,
+                                "borders": [],
+                                "align": "1"
+                            },
+                            {
+                                "offset": 0,
+                                "width": 30,
+                                "borders": [],
+                                "align": "1"
+                            },
+
+                        ]
+                    },
+                    "sm": {
+                        "ignore": true,
+                        "cols": []
+                    },
+                    "md": {
+                        "ignore": true,
+                        "cols": []
+                    },
+                    "lg": {
+                        "ignore": true,
+                        "cols": []
+                    },
+                    "height": null
+                },
+                "columns": [
+                    {
+                        "background": {
+                            "uniqueId": 11452749013,
+                            "wwVersion": 3,
+                            "content": {
+                                "type": "ww-color",
+                                "data": {
+                                    "backgroundColor": "transparent",
+                                    "style": {
+                                        "borderRadius": 0,
+                                        "borderWidth": 0,
+                                        "borderColor": null,
+                                        "borderStyle": null,
+                                        "boxShadow": {
+                                            "x": 0,
+                                            "y": 0,
+                                            "b": 0,
+                                            "s": 0,
+                                            "c": ""
+                                        }
+                                    }
+                                }
+                            },
+                            "link": {
+                                "type": "none",
+                                "data": {}
+                            },
+                            "ratio": -1,
+                            "paddings": {
+                                "xs": {
+                                    "top": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "bottom": 0
+                                },
+                                "md": {
+                                    "top": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "bottom": 0
+                                }
+                            },
+                            "hidden": false,
+                            "tags": [],
+                            "children": {},
+                            "data": {},
+                            "anim": {},
+                            "new": false
+                        },
+                        "wwObjects": []
+                    },
+                    {
+                        "background": {
+                            "uniqueId": 5073082716,
+                            "wwVersion": 3,
+                            "content": {
+                                "type": "ww-color",
+                                "data": {
+                                    "backgroundColor": "transparent",
+                                    "style": {
+                                        "borderRadius": 0,
+                                        "borderWidth": 0,
+                                        "borderColor": null,
+                                        "borderStyle": null,
+                                        "boxShadow": {
+                                            "x": 0,
+                                            "y": 0,
+                                            "b": 0,
+                                            "s": 0,
+                                            "c": ""
+                                        }
+                                    }
+                                }
+                            },
+                            "link": {
+                                "type": "none",
+                                "data": {}
+                            },
+                            "ratio": -1,
+                            "paddings": {
+                                "xs": {
+                                    "top": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "bottom": 0
+                                },
+                                "md": {
+                                    "top": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "bottom": 0
+                                }
+                            },
+                            "hidden": false,
+                            "tags": [],
+                            "children": {},
+                            "data": {},
+                            "anim": {},
+                            "new": false
+                        },
+                        "wwObjects": []
+                    },
+                    {
+                        "background": {
+                            "uniqueId": 2089555755,
+                            "wwVersion": 3,
+                            "content": {
+                                "type": "ww-color",
+                                "data": {
+                                    "backgroundColor": "transparent",
+                                    "style": {
+                                        "borderRadius": 0,
+                                        "borderWidth": 0,
+                                        "borderColor": null,
+                                        "borderStyle": null,
+                                        "boxShadow": {
+                                            "x": 0,
+                                            "y": 0,
+                                            "b": 0,
+                                            "s": 0,
+                                            "c": ""
+                                        }
+                                    }
+                                }
+                            },
+                            "link": {
+                                "type": "none",
+                                "data": {}
+                            },
+                            "ratio": -1,
+                            "paddings": {
+                                "xs": {
+                                    "top": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "bottom": 0
+                                },
+                                "md": {
+                                    "top": 0,
+                                    "left": 0,
+                                    "right": 0,
+                                    "bottom": 0
+                                }
+                            },
+                            "hidden": false,
+                            "tags": [],
+                            "children": {},
+                            "data": {},
+                            "anim": {},
+                            "new": false
+                        },
+                        "wwObjects": []
+                    }
+                ]
+            }
+            return newColumn
+        },
+        removeFeature(list, index) {
+            list.splice(index, 1);
+            if (!list.length) {
                 this.addFeature(0, 'after');
+            }
+            this.sectionCtrl.update(this.section);
+        },
+        removeRootFeature(index) {
+            this.section.data.rootFeatures.splice(index, 1);
+            if (!this.section.data.rootFeatures.length) {
+                this.addRootFeature(0, 'after');
             }
             this.sectionCtrl.update(this.section);
         },
         /* wwManager:end */
         selectFeature(index) {
-            clearInterval(this.selectNextfeatureInterval);
             this.selectedFeatureIndex = index
+            console.log('this.selectedFeatureIndex :', this.selectedFeatureIndex)
+        },
+        selectRootFeature(index) {
+            this.selectedRootFeature = index
+            console.log('this.selectedRootFeature:', this.selectedRootFeature)
         }
     }
 };
@@ -345,13 +430,63 @@ export default {
     width: 100%;
 }
 
+.root-features {
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: 100px;
+    @media (min-width: 768px) {
+        width: 80%;
+        margin-left: 10%;
+    }
+    @media (min-width: 992px) {
+        width: 60%;
+        margin-left: 20%;
+    }
+    @media (min-width: 1200px) {
+        width: 50%;
+        margin-left: 25%;
+    }
+    .root-feature {
+        position: relative;
+        padding: 10px;
+        justify-content: center;
+        flex-basis: auto;
+        min-width: 100px;
+        margin-right: 50px;
+        cursor: pointer;
+        @media (min-width: 768px) {
+            //flex-basis: 20%;
+        }
+    }
+
+    /* wwManager:start */
+    .contextmenu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        color: white;
+        background-color: #ef811a;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 1;
+    }
+    /* wwManager:end */
+}
 .features {
     display: flex;
     justify-content: center;
     width: 65%;
     margin-left: 17.5%;
     margin-top: 50px;
-    flex-wrap: wrap;
     @media (min-width: 768px) {
         width: 80%;
         margin-left: 10%;
@@ -367,10 +502,14 @@ export default {
     .feature {
         position: relative;
         padding: 10px;
-        flex-basis: 33.33333%;
+        justify-content: center;
+        flex-basis: auto;
+        min-width: 100px;
+        margin-right: 50px;
+        border-bottom: 3px solid #4f486d;
         cursor: pointer;
         @media (min-width: 768px) {
-            flex-basis: 20%;
+            //flex-basis: 20%;
         }
     }
     .selected-feature-image {
@@ -403,21 +542,21 @@ export default {
     position: relative;
     background-color: white;
     box-shadow: 0 11px 23px -9px rgba(0, 0, 0, 0.5);
-    margin: 50px 0;
+    margin-bottom: 50px;
     width: 95%;
     margin-left: 2.5%;
     @media (min-width: 768px) {
-        margin: 50px 0;
+        margin-bottom: 50px;
         width: 80%;
         margin-left: 10%;
     }
     @media (min-width: 992px) {
-        margin: 50px 0;
+        margin-bottom: 50px;
         width: 75%;
         margin-left: 12.5%;
     }
     @media (min-width: 1200px) {
-        margin: 50px 0;
+        margin-bottom: 50px;
         width: 70%;
         margin-left: 15%;
     }
