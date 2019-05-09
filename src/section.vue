@@ -25,6 +25,8 @@
                 <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="rootFeature.rootTitle" @ww-add="add(rootFeature.rootTitle, $event)" @ww-remove="remove(rootFeature.rootTitle, $event)">
                     <wwObject tag="div" v-for="title in rootFeature.rootTitle" :key="title.uniqueId" :ww-object="title"></wwObject>
                 </wwLayoutColumn>
+                <!-- TODO: add color when selected -->
+                <!-- TODO: custom color -->
             </div>
         </div>
 
@@ -45,12 +47,18 @@
                     <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="feature.selector.title" @ww-add="add(feature.selector.title, $event)" @ww-remove="remove(feature.selector.title, $event)">
                         <wwObject tag="div" v-for="title in feature.selector.title" :key="title.uniqueId" :ww-object="title" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
                     </wwLayoutColumn>
+                    <!-- TODO:add mobile version look for inspiration from testimony maybe -->
                 </div>
             </div>
         </div>
 
         <div class="content">
-            <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].content"></wwObject>
+            <wwObject class="background" :ww-object="section.data.contentBackground" ww-category="background"></wwObject>
+            <div class="offset-container">
+                <!-- TODO: need an image here for offset -->
+
+                <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].content"></wwObject>
+            </div>
         </div>
     </div>
 </template>
@@ -92,6 +100,12 @@ export default {
         if (!this.section.data.bg) {
             needUpdate = true
             this.section.data.bg = wwLib.wwObject.getDefault({
+                type: 'ww-color'
+            });
+        }
+        if (!this.section.data.contentBackground) {
+            needUpdate = true
+            this.section.data.contentBackground = wwLib.wwObject.getDefault({
                 type: 'ww-color'
             });
         }
@@ -517,7 +531,7 @@ export default {
     margin-top: 50px;
     flex-wrap: wrap;
     @media (min-width: 768px) {
-        //justify-content: space-around;
+        justify-content: space-around;
         width: 80%;
         margin-left: 10%;
     }
@@ -574,6 +588,7 @@ export default {
     margin-bottom: 50px;
     width: 95%;
     margin-left: 2.5%;
+    min-height: 500px;
     @media (min-width: 768px) {
         margin-bottom: 50px;
         width: 80%;
@@ -589,5 +604,10 @@ export default {
         width: 70%;
         margin-left: 15%;
     }
+}
+.offset-container {
+    position: absolute;
+    transform: translateX(-10%);
+    width: 100%;
 }
 </style>
