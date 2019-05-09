@@ -8,7 +8,6 @@
         <!-- wwManager:start -->
         <wwSectionEditMenu :sectionCtrl="sectionCtrl"></wwSectionEditMenu>
         <!-- wwManager:end -->
-        <!-- Weweb Wallpaper -->
         <wwObject class="background" :ww-object="section.data.bg" ww-category="background"></wwObject>
 
         <div class="root-features">
@@ -23,12 +22,15 @@
                 >
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
-                <wwObject tag="div" :ww-object="rootFeature.root"></wwObject>
+                <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="rootFeature.rootTitle" @ww-add="add(rootFeature.rootTitle, $event)" @ww-remove="remove(rootFeature.rootTitle, $event)">
+                    <wwObject tag="div" v-for="title in rootFeature.rootTitle" :key="title.uniqueId" :ww-object="title"></wwObject>
+                </wwLayoutColumn>
             </div>
         </div>
 
-        <div v-for="(rootFeature) in section.data.rootFeatures" :key="rootFeature.uniqueId">
-            <div class="features" v-if="rootFeature.root.uniqueId == section.data.rootFeatures[selectedRootFeature].root.uniqueId">
+        <div v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
+            <!-- <div class="features" v-if="rootFeature.uniqueId == section.data.rootFeatures[selectedRootFeature].uniqueId"> -->
+            <div class="features" v-if="selectedFeature(rootFeature.uniqueId)">
                 <div class="feature" v-for="(feature, index) in rootFeature.features" :key="feature.selector.uniqueId" @click="selectFeature(index)">
                     <wwContextMenu
                         tag="div"
@@ -77,7 +79,8 @@ export default {
         },
         editMode() {
             return this.sectionCtrl.getEditMode() == 'CONTENT'
-        }
+        },
+
     },
     created() {
 
@@ -95,15 +98,17 @@ export default {
         if (!this.section.data.rootFeatures) {
             needUpdate = true
             this.section.data.rootFeatures = [{
-                root: wwLib.wwObject.getDefault({
-                    type: 'ww-text',
-                    data: {
-                        text: {
-                            en: "E-shop",
-                            fr: "E-commerce"
+                rootTitle: [
+                    wwLib.wwObject.getDefault({
+                        type: 'ww-text',
+                        data: {
+                            text: {
+                                en: "E-shop",
+                                fr: "E-commerce"
+                            }
                         }
-                    }
-                }),
+                    })
+                ],
                 features: [{
                     selector: {
                         title: [
@@ -122,7 +127,8 @@ export default {
                         type: 'ww-columns',
                         data: this.newColumns()
                     })
-                }]
+                }],
+                uniqueId: wwLib.wwUtils.getUniqueId()
             }];
         }
 
@@ -135,21 +141,23 @@ export default {
         /* wwManager:start */
         add(list, options) {
             list.splice(options.index, 0, options.wwObject);
-            this.wwObjectCtrl.update(this.wwObject);
+            this.sectionCtrl.update(this.section);
         },
         addRootFeature(_index, where) {
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
             const newRootFeature = {
-                root: wwLib.wwObject.getDefault({
-                    type: 'ww-text',
-                    data: {
-                        text: {
-                            en: "E-shop",
-                            fr: "E-commerce"
+                rootTitle: [
+                    wwLib.wwObject.getDefault({
+                        type: 'ww-text',
+                        data: {
+                            text: {
+                                en: "E-shop",
+                                fr: "E-commerce"
+                            }
                         }
-                    }
-                }),
+                    })
+                ],
                 features: [{
                     selector: {
                         title: [
@@ -168,29 +176,33 @@ export default {
                         type: 'ww-columns',
                         data: this.newColumns()
                     })
-                }]
+                }],
+                uniqueId: wwLib.wwUtils.getUniqueId()
             }
             //splice the new feature
+            console.log('this.section.data.rootFeatures:', this.section.data.rootFeatures)
+
             this.section.data.rootFeatures.splice(index, 0, newRootFeature);
+            console.log('this.section.data.rootFeatures:', this.section.data.rootFeatures)
             this.sectionCtrl.update(this.section);
         },
 
         addFeature(list, _index, where) {
-            console.log('list:', list)
-
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
             const newFeature = {
                 selector: {
-                    title: [wwLib.wwObject.getDefault({
-                        type: 'ww-text',
-                        data: {
-                            text: {
-                                en: "Starter",
-                                fr: "Starter"
+                    title: [
+                        wwLib.wwObject.getDefault({
+                            type: 'ww-text',
+                            data: {
+                                text: {
+                                    en: "Starter",
+                                    fr: "Starter"
+                                }
                             }
-                        }
-                    })]
+                        })
+                    ]
                 },
                 content: wwLib.wwObject.getDefault({
                     type: 'ww-columns',
@@ -399,7 +411,7 @@ export default {
         },
         remove(list, options) {
             list.splice(options.index, 1);
-            this.wwObjectCtrl.update(this.wwObject);
+            this.sectionCtrl.update(this.section);
         },
         removeFeature(list, index) {
             list.splice(index, 1);
@@ -418,12 +430,14 @@ export default {
         /* wwManager:end */
         selectFeature(index) {
             this.selectedFeatureIndex = index
-            console.log('this.selectedFeatureIndex :', this.selectedFeatureIndex)
+        },
+        selectedFeature(id) {
+            return id == this.section.data.rootFeatures[this.selectedRootFeature].uniqueId
         },
         selectRootFeature(index) {
             this.selectedRootFeature = index
-            console.log('this.selectedRootFeature:', this.selectedRootFeature)
         }
+
     }
 };
 </script>
@@ -443,8 +457,8 @@ export default {
 .root-features {
     display: flex;
     justify-content: center;
-    width: 65%;
-    margin-left: 17.5%;
+    width: 95%;
+    margin-left: 2.5%;
     margin-top: 100px;
     @media (min-width: 768px) {
         width: 80%;
@@ -491,28 +505,33 @@ export default {
     }
     /* wwManager:end */
 }
+
 .features {
     display: flex;
     justify-content: center;
-    width: 65%;
-    margin-left: 17.5%;
+    //justify-content: space-around;
+    width: 95%;
+    margin-left: 2.5%;
+    background-color: white;
+    box-shadow: 0 11px 23px -9px rgba(0, 0, 0, 0.5);
     margin-top: 50px;
+    flex-wrap: wrap;
     @media (min-width: 768px) {
+        //justify-content: space-around;
         width: 80%;
         margin-left: 10%;
     }
     @media (min-width: 992px) {
-        width: 60%;
-        margin-left: 20%;
+        width: 75%;
+        margin-left: 12.5%;
     }
     @media (min-width: 1200px) {
-        width: 50%;
-        margin-left: 25%;
+        width: 70%;
+        margin-left: 15%;
     }
     .feature {
         position: relative;
         padding: 10px;
-        justify-content: center;
         flex-basis: auto;
         min-width: 100px;
         margin-right: 50px;
