@@ -38,9 +38,16 @@
                         >
                             <div class="wwi wwi-config"></div>
                         </wwContextMenu>
-                        <wwObject :ww-object="feature.selector.title" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
-                        <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="feature.selector.titles" @ww-add="add(feature.selector.title, $event)" @ww-remove="remove(feature, $event)">
-                            <wwObject tag="div" v-for="title in feature.title" :key="title.uniqueId" :ww-object="title"></wwObject>
+                        <wwLayoutColumn
+                            tag="div"
+                            ww-default="ww-text"
+                            :ww-list="feature.selector.title"
+                            @ww-add="add(feature.selector.title, $event)"
+                            @ww-remove="remove(feature.selector.title, $event)"
+                        >
+                            <wwObject tag="div" v-for="title in feature.selector.title" :key="title.uniqueId" :ww-object="title" 
+                                :class="{'selected-feature-image': index == selectedFeatureIndex}">
+                            </wwObject>
                         </wwLayoutColumn>
                     </div>
                 </div>
@@ -106,15 +113,17 @@ export default {
                 }),
                 features: [{
                     selector: {
-                        title: wwLib.wwObject.getDefault({
-                            type: 'ww-text',
-                            data: {
-                                text: {
-                                    en: "Starter",
-                                    fr: "Starter"
+                        title: [
+                            wwLib.wwObject.getDefault({
+                                type: 'ww-text',
+                                data: {
+                                    text: {
+                                        en: "Starter",
+                                        fr: "Starter"
+                                    }
                                 }
-                            }
-                        })
+                            })
+                        ]
                     },
                     content: wwLib.wwObject.getDefault({
                         type: 'ww-columns',
@@ -131,6 +140,10 @@ export default {
     },
     methods: {
         /* wwManager:start */
+        add(list, options) {
+            list.splice(options.index, 0, options.wwObject);
+            this.wwObjectCtrl.update(this.wwObject);
+        },
         addRootFeature(_index, where) {
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
@@ -146,15 +159,17 @@ export default {
                 }),
                 features: [{
                     selector: {
-                        title: wwLib.wwObject.getDefault({
-                            type: 'ww-text',
-                            data: {
-                                text: {
-                                    en: "Starter",
-                                    fr: "Starter"
+                        title: [
+                            wwLib.wwObject.getDefault({
+                                type: 'ww-text',
+                                data: {
+                                    text: {
+                                        en: "Starter",
+                                        fr: "Starter"
+                                    }
                                 }
-                            }
-                        })
+                            })
+                        ]
                     },
                     content: wwLib.wwObject.getDefault({
                         type: 'ww-columns',
@@ -165,9 +180,10 @@ export default {
             //splice the new feature
             this.section.data.rootFeatures.splice(index, 0, newRootFeature);
             this.sectionCtrl.update(this.section);
-
-
         },
+
+
+
 
         addFeature(list, _index, where) {
             console.log('list:', list)
@@ -176,7 +192,7 @@ export default {
             const index = _index + up
             const newFeature = {
                 selector: {
-                    title: wwLib.wwObject.getDefault({
+                    title: [wwLib.wwObject.getDefault({
                         type: 'ww-text',
                         data: {
                             text: {
@@ -184,7 +200,7 @@ export default {
                                 fr: "Starter"
                             }
                         }
-                    })
+                    })]
                 },
                 content: wwLib.wwObject.getDefault({
                     type: 'ww-columns',
@@ -390,6 +406,10 @@ export default {
                 ]
             }
             return newColumn
+        },
+        remove(list, options) {
+            list.splice(options.index, 1);
+            this.wwObjectCtrl.update(this.wwObject);
         },
         removeFeature(list, index) {
             list.splice(index, 1);
