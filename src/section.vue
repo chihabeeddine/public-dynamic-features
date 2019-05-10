@@ -20,14 +20,12 @@
                     @ww-add-after="addRootFeature(index, 'after')"
                     @ww-remove="removeRootFeature(index)"
                 >
-                    <!-- TODO: popup to change color -->
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
+
                 <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="rootFeature.rootTitle" @ww-add="add(rootFeature.rootTitle, $event)" @ww-remove="remove(rootFeature.rootTitle, $event)">
                     <wwObject tag="div" v-for="title in rootFeature.rootTitle" :key="title.uniqueId" :ww-object="title"></wwObject>
                 </wwLayoutColumn>
-                <!-- TODO: add color when selected -->
-                <!-- TODO: custom color -->
             </div>
         </div>
 
@@ -39,7 +37,8 @@
                     v-for="(feature, index) in rootFeature.features"
                     :key="feature.selector.uniqueId"
                     @click="selectFeature(index)"
-                    :class="{'not-selected': index == selectedFeatureIndex}"
+                    :class="{'not-selected': index != selectedFeatureIndex}"
+                    :style="{'border-color': feature.selector.borderColor}"
                 >
                     <wwContextMenu
                         tag="div"
@@ -48,7 +47,7 @@
                         @ww-add-before="addFeature(rootFeature.features, index, 'before')"
                         @ww-add-after="addFeature(rootFeature.features, index, 'after')"
                         @ww-remove="removeFeature(rootFeature.features, index)"
-                        @ww-options="customizeColor()"
+                        @ww-options="customizeColor(feature)"
                     >
                         <div class="wwi wwi-config"></div>
                     </wwContextMenu>
@@ -61,18 +60,11 @@
 
         <div class="content">
             <wwObject class="background" :ww-object="section.data.contentBackground" ww-category="background"></wwObject>
-
-            <!--   <div class="offset-bg-image">
-                <wwObject :ww-object="section.data.offsetContentImage" ww-default="ww-image"></wwObject>
-            </div>-->
-            <!-- make this a list with popup to add or remove picture -->
             <div class="offset-bg-image">
                 <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].offsetImage"></wwObject>
             </div>
 
             <div class="offset-container">
-                <!-- TODO: need an image here for offset -->
-
                 <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].content"></wwObject>
             </div>
         </div>
@@ -162,7 +154,6 @@ export default {
                                 }
                             })
                         ],
-                        titleColor: "#575174",
                         borderColor: "#575174"
                     },
                     offsetImage: wwLib.wwObject.getDefault({
@@ -219,7 +210,6 @@ export default {
                                 }
                             })
                         ],
-                        titleColor: "#575174",
                         borderColor: "#575174"
                     },
                     offsetImage: wwLib.wwObject.getDefault({
@@ -259,7 +249,6 @@ export default {
                             }
                         })
                     ],
-                    titleColor: "#575174",
                     borderColor: "#575174"
                 },
                 offsetImage: wwLib.wwObject.getDefault({
@@ -278,7 +267,7 @@ export default {
             //this.section.data.features.splice(index, 0, newFeature);
             this.sectionCtrl.update(this.section);
         },
-        async customizeColor() {
+        async customizeColor(feature) {
             try {
                 wwLib.wwObjectHover.setLock(this);
 
@@ -288,20 +277,10 @@ export default {
                   STYLE
                 \================================================================================================*/
                 if (typeof (result) != 'undefined') {
-                    //TODO: get border color
-                    /* if (typeof (result.backgroundColor) != 'undefined') {
-                        this.wwObject.content.data.background = wwLib.wwObject.getDefault({
-                            type: "ww-color",
-                            data: {
-                                backgroundColor: result.backgroundColor
-                            }
-                        })
-                        result.backgroundColor;
-                    } */
-
+                    if (typeof (result.borderColor) != 'undefined') {
+                        feature.selector.borderColor = result.borderColor
+                    }
                     this.sectionCtrl.update(this.section);
-
-                    //  this.wwObjectCtrl.update(this.wwObject)
                 }
                 wwLib.wwObjectHover.removeLock();
             } catch (error) {
@@ -633,7 +612,9 @@ export default {
         flex-basis: auto;
         min-width: 100px;
         margin-right: 50px;
-        border-bottom: 3px solid #4f486d;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        //border-bottom: 2px solid #5e3de8;
         cursor: pointer;
         @media (min-width: 768px) {
             //flex-basis: 20%;
