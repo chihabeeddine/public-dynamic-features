@@ -1519,7 +1519,8 @@
                                         "borderWidth": 0,
                                         "borderRadius": 0
                                       },
-                                      "backgroundColor": "transparent"
+                                      "backgroundColor": "#FCA1B2C8",
+                                      "gradient": null
                                     },
                                     "type": "ww-color"
                                   },
@@ -1603,10 +1604,10 @@
                                         "bottom": 0
                                       },
                                       "md": {
-                                        "top": 88,
-                                        "left": 0,
-                                        "right": 0,
-                                        "bottom": 0
+                                        "top": 25,
+                                        "left": 29,
+                                        "right": 61,
+                                        "bottom": 25
                                       }
                                     },
                                     "hidden": false,
@@ -1634,9 +1635,9 @@
                             "bottom": 0
                           },
                           "md": {
-                            "top": 0,
-                            "left": 0,
-                            "right": 0,
+                            "top": 83,
+                            "left": 165,
+                            "right": 45,
                             "bottom": 0
                           }
                         },
@@ -1958,7 +1959,7 @@
                             "bottom": 0
                           },
                           "md": {
-                            "top": 0,
+                            "top": 15,
                             "left": 0,
                             "right": 0,
                             "bottom": 0
