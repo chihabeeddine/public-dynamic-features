@@ -667,6 +667,7 @@ export default {
     }
 }
 .offset-container {
+    width: 100%;
     @media (min-width: 768px) {
         position: absolute;
         transform: translateX(-9%);
@@ -675,9 +676,13 @@ export default {
 }
 
 .offset-bg-image {
-    min-width: 365px;
-    min-height: 365px;
-    position: absolute;
-    transform: translateX(-30%);
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+        min-width: 365px;
+        min-height: 365px;
+        position: absolute;
+        transform: translateX(-30%);
+    }
 }
 </style>
