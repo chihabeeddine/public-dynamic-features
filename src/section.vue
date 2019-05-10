@@ -20,6 +20,7 @@
                     @ww-add-after="addRootFeature(index, 'after')"
                     @ww-remove="removeRootFeature(index)"
                 >
+                    <!-- TODO: popup to change color -->
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
                 <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="rootFeature.rootTitle" @ww-add="add(rootFeature.rootTitle, $event)" @ww-remove="remove(rootFeature.rootTitle, $event)">
@@ -33,7 +34,13 @@
         <div v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
             <!-- <div class="features" v-if="rootFeature.uniqueId == section.data.rootFeatures[selectedRootFeature].uniqueId"> -->
             <div class="features" v-if="selectedFeature(rootFeature.uniqueId)">
-                <div class="feature" v-for="(feature, index) in rootFeature.features" :key="feature.selector.uniqueId" @click="selectFeature(index)">
+                <div
+                    class="feature"
+                    v-for="(feature, index) in rootFeature.features"
+                    :key="feature.selector.uniqueId"
+                    @click="selectFeature(index)"
+                    :class="{'not-selected': index == selectedFeatureIndex}"
+                >
                     <wwContextMenu
                         tag="div"
                         class="contextmenu"
@@ -41,19 +48,28 @@
                         @ww-add-before="addFeature(rootFeature.features, index, 'before')"
                         @ww-add-after="addFeature(rootFeature.features, index, 'after')"
                         @ww-remove="removeFeature(rootFeature.features, index)"
+                        @ww-options="customizeColor()"
                     >
                         <div class="wwi wwi-config"></div>
                     </wwContextMenu>
                     <wwLayoutColumn tag="div" ww-default="ww-text" :ww-list="feature.selector.title" @ww-add="add(feature.selector.title, $event)" @ww-remove="remove(feature.selector.title, $event)">
-                        <wwObject tag="div" v-for="title in feature.selector.title" :key="title.uniqueId" :ww-object="title" :class="{'selected-feature-image': index == selectedFeatureIndex}"></wwObject>
+                        <wwObject tag="div" v-for="title in feature.selector.title" :key="title.uniqueId" :ww-object="title"></wwObject>
                     </wwLayoutColumn>
-                    <!-- TODO:add mobile version look for inspiration from testimony maybe -->
                 </div>
             </div>
         </div>
 
         <div class="content">
             <wwObject class="background" :ww-object="section.data.contentBackground" ww-category="background"></wwObject>
+
+            <!--   <div class="offset-bg-image">
+                <wwObject :ww-object="section.data.offsetContentImage" ww-default="ww-image"></wwObject>
+            </div>-->
+            <!-- make this a list with popup to add or remove picture -->
+            <div class="offset-bg-image">
+                <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].offsetImage"></wwObject>
+            </div>
+
             <div class="offset-container">
                 <!-- TODO: need an image here for offset -->
 
@@ -109,6 +125,16 @@ export default {
                 type: 'ww-color'
             });
         }
+        if (!this.section.data.offsetContentImage) {
+            needUpdate = true
+            this.section.data.offsetContentImage = wwLib.wwObject.getDefault({
+                type: 'ww-image',
+                data: {
+                    url: 'https://cdn.weweb.app/designs/1/sections/Ujq6ZBkxtv2HJZJQEloVYr4JYfJmxUsi.png'
+                }
+            });
+        }
+
         if (!this.section.data.rootFeatures) {
             needUpdate = true
             this.section.data.rootFeatures = [{
@@ -135,8 +161,16 @@ export default {
                                     }
                                 }
                             })
-                        ]
+                        ],
+                        titleColor: "#575174",
+                        borderColor: "#575174"
                     },
+                    offsetImage: wwLib.wwObject.getDefault({
+                        type: 'ww-image',
+                        data: {
+                            url: 'https://cdn.weweb.app/designs/1/sections/Ujq6ZBkxtv2HJZJQEloVYr4JYfJmxUsi.png'
+                        }
+                    }),
                     content: wwLib.wwObject.getDefault({
                         type: 'ww-columns',
                         data: this.newColumns()
@@ -184,8 +218,16 @@ export default {
                                     }
                                 }
                             })
-                        ]
+                        ],
+                        titleColor: "#575174",
+                        borderColor: "#575174"
                     },
+                    offsetImage: wwLib.wwObject.getDefault({
+                        type: 'ww-image',
+                        data: {
+                            url: 'https://cdn.weweb.app/designs/1/sections/Ujq6ZBkxtv2HJZJQEloVYr4JYfJmxUsi.png'
+                        }
+                    }),
                     content: wwLib.wwObject.getDefault({
                         type: 'ww-columns',
                         data: this.newColumns()
@@ -216,8 +258,16 @@ export default {
                                 }
                             }
                         })
-                    ]
+                    ],
+                    titleColor: "#575174",
+                    borderColor: "#575174"
                 },
+                offsetImage: wwLib.wwObject.getDefault({
+                    type: 'ww-image',
+                    data: {
+                        url: 'https://cdn.weweb.app/designs/1/sections/Ujq6ZBkxtv2HJZJQEloVYr4JYfJmxUsi.png'
+                    }
+                }),
                 content: wwLib.wwObject.getDefault({
                     type: 'ww-columns',
                     data: this.newColumns()
@@ -227,6 +277,87 @@ export default {
             list.splice(index, 0, newFeature);
             //this.section.data.features.splice(index, 0, newFeature);
             this.sectionCtrl.update(this.section);
+        },
+        async customizeColor() {
+            try {
+                wwLib.wwObjectHover.setLock(this);
+
+                let options = await this.edit()
+                const result = await wwLib.wwPopups.open(options);
+                /*=============================================m_ÔÔ_m=============================================\
+                  STYLE
+                \================================================================================================*/
+                if (typeof (result) != 'undefined') {
+                    //TODO: get border color
+                    /* if (typeof (result.backgroundColor) != 'undefined') {
+                        this.wwObject.content.data.background = wwLib.wwObject.getDefault({
+                            type: "ww-color",
+                            data: {
+                                backgroundColor: result.backgroundColor
+                            }
+                        })
+                        result.backgroundColor;
+                    } */
+
+                    this.sectionCtrl.update(this.section);
+
+                    //  this.wwObjectCtrl.update(this.wwObject)
+                }
+                wwLib.wwObjectHover.removeLock();
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        async edit() {
+
+
+            wwLib.wwPopups.addStory('WWTIP_CUSTOM', {
+                title: {
+                    en: 'Color picker',
+                    fr: 'Choisir une couleur'
+                },
+                type: 'wwPopupForm',
+                storyData: {
+                    fields: [
+                        {
+                            label: {
+                                en: 'Border Color:',
+                                fr: 'Couleur de la bordure :'
+                            },
+                            type: 'color',
+                            key: 'borderColor',
+                            value: "#42b983",
+                            valueData: 'borderColor',
+                            desc: {
+                                en: 'Choose a border color for the block',
+                                fr: 'Changer la couleur de la bordure'
+                            }
+                        },
+
+                    ]
+                },
+                buttons: {
+
+                    NEXT: {
+                        text: {
+                            en: 'Ok',
+                            fr: 'Ok'
+                        },
+                        next: false
+                    }
+                }
+            })
+
+
+
+            let options = {
+                firstPage: 'WWTIP_CUSTOM',
+                data: {
+                    wwObject: this.wwObject,
+                }
+            }
+
+            return options
         },
         newColumns() {
             const newColumn = {
@@ -268,7 +399,7 @@ export default {
                 "columns": [
                     {
                         "background": {
-                            "uniqueId": 11452749013,
+                            "uniqueId": wwLib.wwUtils.getUniqueId(),
                             "wwVersion": 3,
                             "content": {
                                 "type": "ww-color",
@@ -319,7 +450,7 @@ export default {
                     },
                     {
                         "background": {
-                            "uniqueId": 5073082716,
+                            "uniqueId": wwLib.wwUtils.getUniqueId(),
                             "wwVersion": 3,
                             "content": {
                                 "type": "ww-color",
@@ -368,61 +499,12 @@ export default {
                         },
                         "wwObjects": []
                     },
-                    {
-                        "background": {
-                            "uniqueId": 2089555755,
-                            "wwVersion": 3,
-                            "content": {
-                                "type": "ww-color",
-                                "data": {
-                                    "backgroundColor": "transparent",
-                                    "style": {
-                                        "borderRadius": 0,
-                                        "borderWidth": 0,
-                                        "borderColor": null,
-                                        "borderStyle": null,
-                                        "boxShadow": {
-                                            "x": 0,
-                                            "y": 0,
-                                            "b": 0,
-                                            "s": 0,
-                                            "c": ""
-                                        }
-                                    }
-                                }
-                            },
-                            "link": {
-                                "type": "none",
-                                "data": {}
-                            },
-                            "ratio": -1,
-                            "paddings": {
-                                "xs": {
-                                    "top": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "bottom": 0
-                                },
-                                "md": {
-                                    "top": 0,
-                                    "left": 0,
-                                    "right": 0,
-                                    "bottom": 0
-                                }
-                            },
-                            "hidden": false,
-                            "tags": [],
-                            "children": {},
-                            "data": {},
-                            "anim": {},
-                            "new": false
-                        },
-                        "wwObjects": []
-                    }
+
                 ]
             }
             return newColumn
         },
+
         remove(list, options) {
             list.splice(options.index, 1);
             this.sectionCtrl.update(this.section);
@@ -444,12 +526,14 @@ export default {
         /* wwManager:end */
         selectFeature(index) {
             this.selectedFeatureIndex = index
+
         },
         selectedFeature(id) {
             return id == this.section.data.rootFeatures[this.selectedRootFeature].uniqueId
         },
         selectRootFeature(index) {
             this.selectedRootFeature = index
+            this.selectedFeatureIndex = 0
         }
 
     }
@@ -555,6 +639,9 @@ export default {
             //flex-basis: 20%;
         }
     }
+    .not-selected {
+        opacity: 0.6;
+    }
     .selected-feature-image {
         border-color: blue;
     }
@@ -609,5 +696,12 @@ export default {
     position: absolute;
     transform: translateX(-10%);
     width: 100%;
+}
+
+.offset-bg-image {
+    min-width: 365px;
+    min-height: 365px;
+    position: absolute;
+    transform: translateX(-30%);
 }
 </style>
