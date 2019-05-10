@@ -30,7 +30,6 @@
         </div>
 
         <div v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
-            <!-- <div class="features" v-if="rootFeature.uniqueId == section.data.rootFeatures[selectedRootFeature].uniqueId"> -->
             <div class="features" v-if="selectedFeature(rootFeature.uniqueId)">
                 <div
                     class="feature"
@@ -170,11 +169,9 @@ export default {
                 uniqueId: wwLib.wwUtils.getUniqueId()
             }];
         }
-
         if (needUpdate) {
             this.sectionCtrl.update(this.section);
         }
-        console.log('this.section.data.rootFeatures:', this.section.data.rootFeatures)
     },
     methods: {
         /* wwManager:start */
@@ -226,10 +223,7 @@ export default {
                 uniqueId: wwLib.wwUtils.getUniqueId()
             }
             //splice the new feature
-            console.log('this.section.data.rootFeatures:', this.section.data.rootFeatures)
-
             this.section.data.rootFeatures.splice(index, 0, newRootFeature);
-            console.log('this.section.data.rootFeatures:', this.section.data.rootFeatures)
             this.sectionCtrl.update(this.section);
         },
 
@@ -586,7 +580,6 @@ export default {
 .features {
     display: flex;
     justify-content: center;
-    //justify-content: space-around;
     width: 95%;
     margin-left: 2.5%;
     background-color: white;
@@ -610,13 +603,13 @@ export default {
         position: relative;
         padding: 10px;
         flex-basis: auto;
-        min-width: 100px;
         margin-right: 50px;
         border-bottom-width: 2px;
         border-bottom-style: solid;
         //border-bottom: 2px solid #5e3de8;
         cursor: pointer;
         @media (min-width: 768px) {
+            min-width: 150px;
             //flex-basis: 20%;
         }
     }
@@ -674,9 +667,11 @@ export default {
     }
 }
 .offset-container {
-    position: absolute;
-    transform: translateX(-10%);
-    width: 100%;
+    @media (min-width: 768px) {
+        position: absolute;
+        transform: translateX(-9%);
+        width: 110%;
+    }
 }
 
 .offset-bg-image {
