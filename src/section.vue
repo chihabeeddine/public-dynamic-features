@@ -310,7 +310,7 @@ export default {
                             value: "#42b983",
                             valueData: 'borderColor',
                             desc: {
-                                en: 'Choose a border color for the block',
+                                en: 'Choose a border color',
                                 fr: 'Changer la couleur de la bordure'
                             }
                         },
