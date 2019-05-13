@@ -29,8 +29,10 @@
             </div>
         </div>
 
-        <div v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
+        <div class="feature-wrapper" v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
             <div class="features" v-if="selectedFeature(rootFeature.uniqueId)">
+                <wwObject class="feature-background" :ww-object="section.data.featureBackground" ww-category="background"></wwObject>
+
                 <div
                     class="feature"
                     v-for="(feature, index) in rootFeature.features"
@@ -113,6 +115,12 @@ export default {
         if (!this.section.data.contentBackground) {
             needUpdate = true
             this.section.data.contentBackground = wwLib.wwObject.getDefault({
+                type: 'ww-color'
+            });
+        }
+        if (!this.section.data.featureBackground) {
+            needUpdate = true
+            this.section.data.featureBackground = wwLib.wwObject.getDefault({
                 type: 'ww-color'
             });
         }
@@ -508,7 +516,14 @@ export default {
             this.selectedRootFeature = index
             this.selectedFeatureIndex = 0
         }
+        /* 
+        grey line 
+        mobile version 
+        more marge
+        squred button
 
+        
+        */
     }
 };
 </script>
@@ -518,6 +533,13 @@ export default {
 <!-- Add lang="scss" or others to use computed CSS -->
 <style lang='scss' scoped>
 .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.feature-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -545,11 +567,9 @@ export default {
     }
     .root-feature {
         position: relative;
-        padding: 10px;
         justify-content: center;
         flex-basis: auto;
         min-width: 100px;
-        margin-right: 50px;
         cursor: pointer;
         @media (min-width: 768px) {
             //flex-basis: 20%;
@@ -577,17 +597,14 @@ export default {
     /* wwManager:end */
 }
 
-.features {
-    display: flex;
-    justify-content: center;
+.feature-wrapper {
+    position: relative;
+    width: 95%;
     width: 95%;
     margin-left: 2.5%;
-    background-color: white;
     box-shadow: 0 11px 23px -9px rgba(0, 0, 0, 0.5);
-    margin-top: 50px;
-    flex-wrap: wrap;
     @media (min-width: 768px) {
-        justify-content: space-around;
+        //justify-content: space-around;
         width: 80%;
         margin-left: 10%;
     }
@@ -599,49 +616,55 @@ export default {
         width: 70%;
         margin-left: 15%;
     }
-    .feature {
-        position: relative;
-        padding: 10px;
-        flex-basis: auto;
-        margin-right: 50px;
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        //border-bottom: 2px solid #5e3de8;
-        cursor: pointer;
-        @media (min-width: 768px) {
-            min-width: 150px;
-            //flex-basis: 20%;
-        }
-    }
-    .not-selected {
-        opacity: 0.6;
-    }
-    .selected-feature-image {
-        border-color: blue;
-    }
-    .selected-feature-label {
-        color: #ce003b;
-    }
-    /* wwManager:start */
-    .contextmenu {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        width: 30px;
-        height: 30px;
-        color: white;
-        background-color: #ef811a;
-        border-radius: 100%;
+    .features {
         display: flex;
         justify-content: center;
-        align-items: center;
-        font-size: 1.2rem;
-        cursor: pointer;
-        z-index: 1;
+        flex-wrap: wrap;
+        @media (min-width: 768px) {
+            min-height: 100px;
+            justify-content: space-around;
+        }
+
+        .feature {
+            position: relative;
+            padding: 10px;
+            flex-basis: auto;
+            margin-right: 50px;
+            border-bottom-width: 2px;
+            border-bottom-style: solid;
+            cursor: pointer;
+            @media (min-width: 768px) {
+                min-width: 200px;
+                //flex-basis: 20%;
+            }
+        }
+        .not-selected {
+            opacity: 0.4;
+            border-bottom: 0px;
+        }
+
+        /* wwManager:start */
+        .contextmenu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            color: white;
+            background-color: #ef811a;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+        /* wwManager:end */
     }
-    /* wwManager:end */
 }
+
 .content {
     position: relative;
     background-color: white;

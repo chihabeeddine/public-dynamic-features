@@ -1,6 +1,6 @@
 {
   "bg": {
-    "uniqueId": 2236564690,
+    "uniqueId": 332058543,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
@@ -48,12 +48,12 @@
     "new": false
   },
   "contentBackground": {
-    "uniqueId": 4705062275,
+    "uniqueId": 13967801961,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
       "data": {
-        "backgroundColor": "transparent",
+        "backgroundColor": "#FBFBFC",
         "style": {
           "borderRadius": 0,
           "borderWidth": 0,
@@ -66,7 +66,8 @@
             "s": 0,
             "c": ""
           }
-        }
+        },
+        "gradient": null
       }
     },
     "link": {
@@ -96,7 +97,7 @@
     "new": false
   },
   "offsetContentImage": {
-    "uniqueId": 10415219195,
+    "uniqueId": 7754319444,
     "wwVersion": 3,
     "content": {
       "type": "ww-image",
@@ -174,22 +175,73 @@
     {
       "rootTitle": [
         {
-          "uniqueId": 7463287733,
+          "uniqueId": 10384164093,
           "wwVersion": 3,
           "content": {
-            "type": "ww-text",
+            "type": "ww-button",
             "data": {
               "text": {
-                "en": "E-Commerce",
-                "fr": "E-commerce"
+                "uniqueId": 1008968882,
+                "wwVersion": 3,
+                "content": {
+                  "type": "ww-text",
+                  "data": {
+                    "text": {
+                      "fr": "Nouveau bouton",
+                      "en": "<font face=\"Lato, Lato\">CMS</font>"
+                    },
+                    "tag": "div",
+                    "align": "",
+                    "font": "",
+                    "size": "",
+                    "color": "",
+                    "classes": [],
+                    "children": []
+                  }
+                },
+                "link": {
+                  "type": "none",
+                  "data": {}
+                },
+                "ratio": -1,
+                "paddings": {
+                  "xs": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 0,
+                    "bottom": 0
+                  },
+                  "md": {
+                    "top": 0,
+                    "left": 5,
+                    "right": 5,
+                    "bottom": 0
+                  }
+                },
+                "hidden": false,
+                "tags": [],
+                "children": {},
+                "data": {},
+                "anim": {},
+                "new": false
               },
-              "tag": "div",
-              "align": "",
-              "font": "",
-              "size": "",
-              "color": "",
-              "classes": [],
-              "children": []
+              "style": {
+                "backgroundColor": "#FBFBFC",
+                "gradient": {},
+                "borderRadius": 0,
+                "borderWidth": 1,
+                "borderColor": "#FBFBFC",
+                "borderStyle": "solid",
+                "padding": 20,
+                "boxShadow": {
+                  "x": 0,
+                  "y": 2,
+                  "b": 5,
+                  "s": 0,
+                  "c": "rgba(50, 50, 50, 0.75)"
+                }
+              },
+              "fullWidth": false
             }
           },
           "link": {
@@ -208,7 +260,7 @@
               "top": 0,
               "left": 0,
               "right": 0,
-              "bottom": 0
+              "bottom": 20
             }
           },
           "hidden": false,
@@ -224,7 +276,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 6365594682,
+                "uniqueId": 393256061,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -255,7 +307,7 @@
                     "bottom": 0
                   },
                   "md": {
-                    "top": 0,
+                    "top": 20,
                     "left": 0,
                     "right": 0,
                     "bottom": 0
@@ -269,7 +321,7 @@
                 "new": false
               },
               {
-                "uniqueId": 5946654783,
+                "uniqueId": 12346410247,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -317,7 +369,7 @@
             "borderColor": "#B7EEEEC8"
           },
           "offsetImage": {
-            "uniqueId": 4630918097,
+            "uniqueId": 11852905171,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -398,7 +450,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 11580733824,
+            "uniqueId": 5226854637,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -545,7 +597,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 15166405759,
+                      "uniqueId": 12639329705,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -595,7 +647,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 13232956655,
+                        "uniqueId": 3555884906,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -643,7 +695,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 13232345407,
+                      "uniqueId": 15372273980,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -692,14 +744,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 14433611038,
+                        "uniqueId": 969300165,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 5193418747,
+                                "uniqueId": 498646500,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -752,7 +804,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 11584033139,
+                                "uniqueId": 14942703936,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -828,21 +880,21 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 1355898418,
+                        "uniqueId": 508970035,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 2149885954,
+                                "uniqueId": 4399069363,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-row",
                                   "data": {
                                     "wwObjects": [
                                       {
-                                        "uniqueId": 4098859367,
+                                        "uniqueId": 3366207362,
                                         "wwVersion": 3,
                                         "content": {
                                           "type": "ww-icon",
@@ -895,7 +947,7 @@
                                         "new": false
                                       },
                                       {
-                                        "uniqueId": 11686696851,
+                                        "uniqueId": 9710782701,
                                         "wwVersion": 3,
                                         "content": {
                                           "type": "ww-text",
@@ -1037,7 +1089,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 11801037368,
+                "uniqueId": 14492638282,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -1068,7 +1120,7 @@
                     "bottom": 0
                   },
                   "md": {
-                    "top": 0,
+                    "top": 20,
                     "left": 0,
                     "right": 0,
                     "bottom": 0
@@ -1082,7 +1134,7 @@
                 "new": false
               },
               {
-                "uniqueId": 1681113585,
+                "uniqueId": 9298344907,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -1130,7 +1182,7 @@
             "borderColor": "#575174"
           },
           "offsetImage": {
-            "uniqueId": 8722020175,
+            "uniqueId": 4458309643,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -1211,7 +1263,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 693102381,
+            "uniqueId": 3542797123,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -1358,7 +1410,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 1766694303,
+                      "uniqueId": 6313137148,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -1407,7 +1459,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 11783835888,
+                        "uniqueId": 2929822046,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -1499,7 +1551,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 4788184697,
+                                  "uniqueId": 2734637683,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -1535,14 +1587,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 2653097959,
+                                    "uniqueId": 11077009354,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 14747279429,
+                                            "uniqueId": 3946890366,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -1652,7 +1704,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 9763925792,
+                      "uniqueId": 640225483,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -1701,14 +1753,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 2122023085,
+                        "uniqueId": 10660735403,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 9536995711,
+                                "uniqueId": 3995111047,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1761,7 +1813,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4793233237,
+                                "uniqueId": 8876293229,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1837,14 +1889,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 11746125670,
+                        "uniqueId": 9770202628,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 3464136296,
+                                "uniqueId": 10832363661,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1897,7 +1949,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 489941320,
+                                "uniqueId": 7433388929,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -2008,7 +2060,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 2880698362,
+                "uniqueId": 10366830667,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -2039,7 +2091,7 @@
                     "bottom": 0
                   },
                   "md": {
-                    "top": 0,
+                    "top": 20,
                     "left": 0,
                     "right": 0,
                     "bottom": 0
@@ -2053,7 +2105,7 @@
                 "new": false
               },
               {
-                "uniqueId": 1244218196,
+                "uniqueId": 7726551126,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -2101,7 +2153,7 @@
             "borderColor": "#575174"
           },
           "offsetImage": {
-            "uniqueId": 10543033685,
+            "uniqueId": 7490396655,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -2182,7 +2234,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 3845504463,
+            "uniqueId": 1689119766,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -2224,7 +2276,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 10233772698,
+                      "uniqueId": 1177024256,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2275,7 +2327,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 14279288123,
+                      "uniqueId": 9159390267,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2360,22 +2412,73 @@
     {
       "rootTitle": [
         {
-          "uniqueId": 13271917346,
+          "uniqueId": 7968796068,
           "wwVersion": 3,
           "content": {
-            "type": "ww-text",
+            "type": "ww-button",
             "data": {
               "text": {
-                "en": "CMS",
-                "fr": "E-commerce"
+                "uniqueId": 8953705730,
+                "wwVersion": 3,
+                "content": {
+                  "type": "ww-text",
+                  "data": {
+                    "text": {
+                      "fr": "Nouveau bouton",
+                      "en": "<font face=\"Lato, Lato\">E-<font>Shop</font></font>"
+                    },
+                    "tag": "div",
+                    "align": "",
+                    "font": "",
+                    "size": "",
+                    "color": "",
+                    "classes": [],
+                    "children": []
+                  }
+                },
+                "link": {
+                  "type": "none",
+                  "data": {}
+                },
+                "ratio": -1,
+                "paddings": {
+                  "xs": {
+                    "top": 0,
+                    "left": 0,
+                    "right": 0,
+                    "bottom": 0
+                  },
+                  "md": {
+                    "top": 0,
+                    "left": 5,
+                    "right": 5,
+                    "bottom": 0
+                  }
+                },
+                "hidden": false,
+                "tags": [],
+                "children": {},
+                "data": {},
+                "anim": {},
+                "new": false
               },
-              "tag": "div",
-              "align": "",
-              "font": "",
-              "size": "",
-              "color": "",
-              "classes": [],
-              "children": []
+              "style": {
+                "backgroundColor": "#FBFBFC",
+                "gradient": {},
+                "borderRadius": 0,
+                "borderWidth": 1,
+                "borderColor": "#FBFBFC",
+                "borderStyle": "solid",
+                "padding": 20,
+                "boxShadow": {
+                  "x": 0,
+                  "y": 2,
+                  "b": 5,
+                  "s": 0,
+                  "c": "rgba(50, 50, 50, 0.75)"
+                }
+              },
+              "fullWidth": false
             }
           },
           "link": {
@@ -2394,7 +2497,7 @@
               "top": 0,
               "left": 0,
               "right": 0,
-              "bottom": 0
+              "bottom": 20
             }
           },
           "hidden": false,
@@ -2410,7 +2513,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 11417428142,
+                "uniqueId": 10438413512,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -2458,7 +2561,7 @@
             "borderColor": "#575174"
           },
           "offsetImage": {
-            "uniqueId": 832275744,
+            "uniqueId": 11291155317,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -2533,7 +2636,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 9355681070,
+            "uniqueId": 1346628466,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -2575,7 +2678,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 14829951171,
+                      "uniqueId": 14195644240,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2626,7 +2729,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 4250089786,
+                      "uniqueId": 2157797963,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2708,5 +2811,54 @@
       ],
       "uniqueId": 3526969576
     }
-  ]
+  ],
+  "featureBackground": {
+    "uniqueId": 1649923741,
+    "wwVersion": 3,
+    "content": {
+      "type": "ww-color",
+      "data": {
+        "backgroundColor": "#FBFBFC",
+        "style": {
+          "borderRadius": 0,
+          "borderWidth": 0,
+          "borderColor": null,
+          "borderStyle": null,
+          "boxShadow": {
+            "x": 0,
+            "y": 0,
+            "b": 0,
+            "s": 0,
+            "c": ""
+          }
+        },
+        "gradient": null
+      }
+    },
+    "link": {
+      "type": "none",
+      "data": {}
+    },
+    "ratio": -1,
+    "paddings": {
+      "xs": {
+        "top": 0,
+        "left": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "md": {
+        "top": 0,
+        "left": 0,
+        "right": 0,
+        "bottom": 0
+      }
+    },
+    "hidden": false,
+    "tags": [],
+    "children": {},
+    "data": {},
+    "anim": {},
+    "new": false
+  }
 }
