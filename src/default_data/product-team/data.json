@@ -1,6 +1,6 @@
 {
   "bg": {
-    "uniqueId": 6882361029,
+    "uniqueId": 6614809771,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
@@ -48,7 +48,7 @@
     "new": false
   },
   "contentBackground": {
-    "uniqueId": 7874794479,
+    "uniqueId": 3625761391,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
@@ -97,7 +97,7 @@
     "new": false
   },
   "offsetContentImage": {
-    "uniqueId": 10192024002,
+    "uniqueId": 6858872027,
     "wwVersion": 3,
     "content": {
       "type": "ww-image",
@@ -175,13 +175,13 @@
     {
       "rootTitle": [
         {
-          "uniqueId": 14734658382,
+          "uniqueId": 1990882836,
           "wwVersion": 3,
           "content": {
             "type": "ww-button",
             "data": {
               "text": {
-                "uniqueId": 13711903339,
+                "uniqueId": 4932162449,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -254,7 +254,7 @@
               "top": 0,
               "left": 0,
               "right": 0,
-              "bottom": 0
+              "bottom": 30
             },
             "md": {
               "top": 0,
@@ -276,7 +276,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 5278005690,
+                "uniqueId": 10278938318,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -321,14 +321,14 @@
                 "new": false
               },
               {
-                "uniqueId": 34358992,
+                "uniqueId": 9147500319,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 3587237398,
+                        "uniqueId": 11462546525,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -373,7 +373,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 7858898176,
+                        "uniqueId": 8394827038,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -452,7 +452,7 @@
             "borderColor": "#B7EEEEC8"
           },
           "offsetImage": {
-            "uniqueId": 977983431,
+            "uniqueId": 12179570973,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -533,7 +533,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 12191978324,
+            "uniqueId": 2733640878,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -573,8 +573,8 @@
                         "hide": true
                       },
                       {
-                        "offset": 0,
-                        "width": "100",
+                        "offset": "10",
+                        "width": "80",
                         "borders": [
                           {
                             "color": "#000000",
@@ -630,7 +630,8 @@
                             "style": "solid",
                             "width": 0
                           }
-                        ]
+                        ],
+                        "hide": true
                       },
                       {
                         "align": "1",
@@ -735,7 +736,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 3132299506,
+                      "uniqueId": 5205152846,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -784,7 +785,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 11293704707,
+                        "uniqueId": 11768923706,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -876,7 +877,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 3310086232,
+                                  "uniqueId": 14021993755,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -912,14 +913,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 14531556279,
+                                    "uniqueId": 12656646394,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 8580559501,
+                                            "uniqueId": 5329801295,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -1039,7 +1040,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 6755037447,
+                      "uniqueId": 9479626160,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -1088,14 +1089,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 13046605084,
+                        "uniqueId": 4566739628,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 12945950477,
+                                "uniqueId": 4916000118,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1148,7 +1149,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 5782629423,
+                                "uniqueId": 4347174084,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1228,14 +1229,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 862416520,
+                        "uniqueId": 14822459284,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 10676563489,
+                                "uniqueId": 5560042109,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1288,7 +1289,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 9831384334,
+                                "uniqueId": 4583407648,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1364,14 +1365,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 13251145300,
+                        "uniqueId": 10588310731,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 11884640222,
+                                "uniqueId": 7401733518,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1424,7 +1425,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 15338810440,
+                                "uniqueId": 12311132595,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1500,14 +1501,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 14611391743,
+                        "uniqueId": 9399865954,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 5605228789,
+                                "uniqueId": 3301531297,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1560,7 +1561,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 3462009233,
+                                "uniqueId": 13991075419,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1636,14 +1637,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 2369012536,
+                        "uniqueId": 12097642231,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 8022485476,
+                                "uniqueId": 11568245663,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1696,7 +1697,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 11302658034,
+                                "uniqueId": 13012486766,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1786,7 +1787,7 @@
                 "top": 0,
                 "left": 0,
                 "right": 0,
-                "bottom": 0
+                "bottom": 30
               },
               "md": {
                 "top": 43,
@@ -1809,7 +1810,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 4207972697,
+                "uniqueId": 6737999053,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -1854,14 +1855,14 @@
                 "new": false
               },
               {
-                "uniqueId": 468202641,
+                "uniqueId": 1875607006,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 4331871584,
+                        "uniqueId": 7203429234,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -1906,7 +1907,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 817545802,
+                        "uniqueId": 9372802781,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -1985,7 +1986,7 @@
             "borderColor": "#FCA1B2C8"
           },
           "offsetImage": {
-            "uniqueId": 6462248519,
+            "uniqueId": 4969313099,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -2066,7 +2067,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 5968029492,
+            "uniqueId": 12859874022,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -2106,8 +2107,8 @@
                         "hide": true
                       },
                       {
-                        "offset": 0,
-                        "width": "100",
+                        "offset": "10",
+                        "width": "80",
                         "borders": [
                           {
                             "color": "#000000",
@@ -2163,7 +2164,8 @@
                             "style": "solid",
                             "width": 0
                           }
-                        ]
+                        ],
+                        "hide": true
                       },
                       {
                         "align": "1",
@@ -2268,7 +2270,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 8704503552,
+                      "uniqueId": 8973668376,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2317,7 +2319,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 4468631648,
+                        "uniqueId": 11758928191,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -2409,7 +2411,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 873375237,
+                                  "uniqueId": 10684324567,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -2429,7 +2431,7 @@
                                         "borderWidth": 0,
                                         "borderRadius": 0
                                       },
-                                      "backgroundColor": "#B7EEEEC8",
+                                      "backgroundColor": "#FBB4C2C8",
                                       "gradient": null
                                     },
                                     "type": "ww-color"
@@ -2445,14 +2447,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 5437917445,
+                                    "uniqueId": 5114412234,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 6832365482,
+                                            "uniqueId": 8781515906,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -2572,7 +2574,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 12395274064,
+                      "uniqueId": 12859940409,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2621,26 +2623,26 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 8430895948,
+                        "uniqueId": 6191406329,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 211001241,
+                                "uniqueId": 4290911843,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#FBB4C2C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#FBB4C2C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -2681,7 +2683,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 640027889,
+                                "uniqueId": 10630613271,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -2761,26 +2763,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 11364473045,
+                        "uniqueId": 12771221747,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 14515929029,
+                                "uniqueId": 9000640981,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#FBB4C2C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#FBB4C2C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -2821,7 +2823,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4230857470,
+                                "uniqueId": 15116333896,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -2897,26 +2899,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 6656717169,
+                        "uniqueId": 15497113732,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 2434724917,
+                                "uniqueId": 5146735117,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#FBB4C2C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#FBB4C2C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -2957,7 +2959,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 9533561773,
+                                "uniqueId": 432419377,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -3033,26 +3035,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 13974189933,
+                        "uniqueId": 1984957282,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 3863128593,
+                                "uniqueId": 9615731926,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#FBB4C2C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#FBB4C2C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -3093,7 +3095,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 5808620551,
+                                "uniqueId": 4135468039,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -3169,26 +3171,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 10910481254,
+                        "uniqueId": 11426358525,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 3151552952,
+                                "uniqueId": 7173705949,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#FBB4C2C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#FBB4C2C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -3229,7 +3231,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 3007718311,
+                                "uniqueId": 7519553779,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -3319,7 +3321,7 @@
                 "top": 0,
                 "left": 0,
                 "right": 0,
-                "bottom": 0
+                "bottom": 30
               },
               "md": {
                 "top": 43,
@@ -3342,7 +3344,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 14653191869,
+                "uniqueId": 1322832226,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -3387,14 +3389,14 @@
                 "new": false
               },
               {
-                "uniqueId": 3587182670,
+                "uniqueId": 15080939503,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 14663579464,
+                        "uniqueId": 15220879966,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -3439,7 +3441,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 1993894060,
+                        "uniqueId": 10606633360,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -3518,7 +3520,7 @@
             "borderColor": "#575174"
           },
           "offsetImage": {
-            "uniqueId": 10357418282,
+            "uniqueId": 5896202303,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -3599,7 +3601,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 11291228161,
+            "uniqueId": 5999948707,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -3639,8 +3641,8 @@
                         "hide": true
                       },
                       {
-                        "offset": 0,
-                        "width": "100",
+                        "offset": "10",
+                        "width": "80",
                         "borders": [
                           {
                             "color": "#000000",
@@ -3696,7 +3698,8 @@
                             "style": "solid",
                             "width": 0
                           }
-                        ]
+                        ],
+                        "hide": true
                       },
                       {
                         "align": "1",
@@ -3801,7 +3804,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 12049530296,
+                      "uniqueId": 3574850615,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -3850,7 +3853,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 8468639097,
+                        "uniqueId": 10754496540,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -3942,7 +3945,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 3760708530,
+                                  "uniqueId": 14865405157,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -3962,7 +3965,7 @@
                                         "borderWidth": 0,
                                         "borderRadius": 0
                                       },
-                                      "backgroundColor": "#B7EEEEC8",
+                                      "backgroundColor": "#797591C8",
                                       "gradient": null
                                     },
                                     "type": "ww-color"
@@ -3978,14 +3981,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 3441108178,
+                                    "uniqueId": 5751084550,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 3815564049,
+                                            "uniqueId": 15204010645,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -4105,7 +4108,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 2229952814,
+                      "uniqueId": 2671489973,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -4154,26 +4157,26 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 7296274956,
+                        "uniqueId": 14134554551,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 6337338212,
+                                "uniqueId": 10795132014,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#797591C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#797591C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -4214,7 +4217,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 1518886711,
+                                "uniqueId": 11311265500,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4294,26 +4297,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 402428083,
+                        "uniqueId": 7190571359,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 10668023058,
+                                "uniqueId": 1015549376,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#797591C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#797591C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -4354,7 +4357,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4361771362,
+                                "uniqueId": 2576232263,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4430,26 +4433,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 10988896766,
+                        "uniqueId": 2608492135,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 7047264083,
+                                "uniqueId": 3355876209,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#797591C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#797591C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -4490,7 +4493,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 6997634105,
+                                "uniqueId": 11437339232,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4566,26 +4569,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 11984338681,
+                        "uniqueId": 6185551438,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 5196577353,
+                                "uniqueId": 9657473486,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#797591C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#797591C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -4626,7 +4629,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4826661459,
+                                "uniqueId": 2396102149,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4702,26 +4705,26 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 7665741850,
+                        "uniqueId": 5680506704,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 14252057877,
+                                "uniqueId": 11522858849,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
                                   "data": {
                                     "icon": "wwi wwi-check",
                                     "style": {
-                                      "color": "#B7EEEEC8",
+                                      "color": "#797591C8",
                                       "backgroundColor": "#FFFFFF",
                                       "gradient": {},
                                       "borderRadius": 50,
                                       "borderWidth": 2,
-                                      "borderColor": "#B7EEEEC8",
+                                      "borderColor": "#797591C8",
                                       "borderStyle": "solid",
                                       "boxShadow": {
                                         "x": 0,
@@ -4762,7 +4765,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 8098285070,
+                                "uniqueId": 5995716229,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4852,7 +4855,7 @@
                 "top": 0,
                 "left": 0,
                 "right": 0,
-                "bottom": 0
+                "bottom": 30
               },
               "md": {
                 "top": 43,
@@ -4877,13 +4880,13 @@
     {
       "rootTitle": [
         {
-          "uniqueId": 15071564273,
+          "uniqueId": 10552104688,
           "wwVersion": 3,
           "content": {
             "type": "ww-button",
             "data": {
               "text": {
-                "uniqueId": 13189129880,
+                "uniqueId": 12420342709,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -4960,7 +4963,7 @@
             },
             "md": {
               "top": 0,
-              "left": 0,
+              "left": 30,
               "right": 0,
               "bottom": 20
             }
@@ -4978,7 +4981,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 11259212072,
+                "uniqueId": 10399540272,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -5023,14 +5026,14 @@
                 "new": false
               },
               {
-                "uniqueId": 6055080329,
+                "uniqueId": 11816714731,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 7034244787,
+                        "uniqueId": 3586340716,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -5075,7 +5078,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 4814142471,
+                        "uniqueId": 10983529653,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -5151,10 +5154,10 @@
                 "new": false
               }
             ],
-            "borderColor": "#575174"
+            "borderColor": "#B7EEEEC8"
           },
           "offsetImage": {
-            "uniqueId": 1827684737,
+            "uniqueId": 5010714969,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -5229,7 +5232,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 4290998369,
+            "uniqueId": 14332950979,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -5269,8 +5272,8 @@
                         "hide": true
                       },
                       {
-                        "offset": 0,
-                        "width": "100",
+                        "offset": "10",
+                        "width": "80",
                         "borders": [
                           {
                             "color": "#000000",
@@ -5326,7 +5329,8 @@
                             "style": "solid",
                             "width": 0
                           }
-                        ]
+                        ],
+                        "hide": true
                       },
                       {
                         "align": "1",
@@ -5431,7 +5435,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 3090810542,
+                      "uniqueId": 5598791835,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -5480,7 +5484,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 7882521144,
+                        "uniqueId": 4085888698,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -5572,7 +5576,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 6611058854,
+                                  "uniqueId": 12914500520,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -5608,14 +5612,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 9157338914,
+                                    "uniqueId": 4419522079,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 9573061007,
+                                            "uniqueId": 13746024103,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -5735,7 +5739,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 4800112016,
+                      "uniqueId": 14411548516,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -5784,14 +5788,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 8687135622,
+                        "uniqueId": 2995176648,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 12126625036,
+                                "uniqueId": 12040855003,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -5844,7 +5848,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 342141640,
+                                "uniqueId": 1048803214,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -5924,14 +5928,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 4206380241,
+                        "uniqueId": 7150448357,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 3314180341,
+                                "uniqueId": 10055940082,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -5984,7 +5988,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 12898969812,
+                                "uniqueId": 14831475686,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -6060,14 +6064,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 9232199320,
+                        "uniqueId": 1330868954,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 6186670654,
+                                "uniqueId": 13669803146,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -6120,7 +6124,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 66226603,
+                                "uniqueId": 14701278592,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -6196,14 +6200,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 5352299701,
+                        "uniqueId": 13124078589,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 6463873981,
+                                "uniqueId": 4184055804,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -6256,7 +6260,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 12046235041,
+                                "uniqueId": 8473373781,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -6332,14 +6336,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 12122564107,
+                        "uniqueId": 6472203704,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 7840192917,
+                                "uniqueId": 15134125073,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -6392,7 +6396,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 12017458104,
+                                "uniqueId": 7184278776,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -6482,7 +6486,7 @@
                 "top": 0,
                 "left": 0,
                 "right": 0,
-                "bottom": 0
+                "bottom": 30
               },
               "md": {
                 "top": 43,
@@ -6506,7 +6510,7 @@
     }
   ],
   "featureBackground": {
-    "uniqueId": 1630162040,
+    "uniqueId": 14461335975,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",

@@ -14,7 +14,7 @@
             <div class="root-feature" v-for="(rootFeature, index) in section.data.rootFeatures" :key="rootFeature.uniqueId" @click="selectRootFeature(index)">
                 <wwContextMenu
                     tag="div"
-                    class="contextmenu"
+                    class="contextmenu-right"
                     v-if="editMode"
                     @ww-add-before="addRootFeature(index, 'before')"
                     @ww-add-after="addRootFeature(index, 'after')"
@@ -34,7 +34,7 @@
             <div class="feature-title">
                 <wwContextMenu
                     tag="div"
-                    class="contextmenu-mobile"
+                    class="contextmenu-right"
                     v-if="editMode"
                     @ww-add-before="addFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex, 'before')"
                     @ww-add-after="addFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex, 'after')"
@@ -136,6 +136,9 @@ export default {
         editMode() {
             return this.sectionCtrl.getEditMode() == 'CONTENT'
         },
+        computedFeature() {
+            return this.section.data.rootFeatures[this.selectedRootFeature].features[this.currentIndex]
+        }
 
     },
     created() {
@@ -697,12 +700,15 @@ export default {
             position: relative;
             padding: 10px;
             flex-basis: auto;
-            //margin-right: 50px;
             border-bottom-width: 2px;
             border-bottom-style: solid;
             cursor: pointer;
             @media (min-width: 768px) {
                 min-width: 200px;
+            }
+
+            @media (min-width: 1200px) {
+                min-width: 300px;
                 //flex-basis: 20%;
             }
         }
@@ -747,11 +753,11 @@ export default {
     }
 }
 
-.contextmenu-mobile {
+.contextmenu-right {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
     width: 30px;
     height: 30px;
     color: white;
