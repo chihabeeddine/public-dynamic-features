@@ -29,7 +29,37 @@
             </div>
         </div>
 
-        <div class="feature-wrapper" v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
+        <v-touch ref="swiper" @swipeleft="nextSlide()" @swiperight="prevSlide()" class="mobile-wrapper">
+            <wwObject class="feature-background" :ww-object="section.data.featureBackground" ww-category="background"></wwObject>
+            <div class="feature-title">
+                <wwContextMenu
+                    tag="div"
+                    class="contextmenu-mobile"
+                    v-if="editMode"
+                    @ww-add-before="addFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex, 'before')"
+                    @ww-add-after="addFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex, 'after')"
+                    @ww-remove="removeFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex)"
+                    @ww-options="customizeColor(section.data.rootFeatures[selectedRootFeature].features[currentIndex])"
+                >
+                    <div class="wwi wwi-config"></div>
+                </wwContextMenu>
+                <wwLayoutColumn
+                    tag="div"
+                    ww-default="ww-text"
+                    :ww-list="section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title"
+                    @ww-add="add(section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title, $event)"
+                    @ww-remove="remove(section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title, $event)"
+                >
+                    <wwObject tag="div" v-for="title in section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title" :key="title.uniqueId" :ww-object="title"></wwObject>
+                </wwLayoutColumn>
+            </div>
+
+            <div class="feature-content">
+                <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[currentIndex].content"></wwObject>
+            </div>
+        </v-touch>
+
+        <div class="feature-wrapper hidden-mobile" v-for="rootFeature in section.data.rootFeatures" :key="rootFeature.uniqueId">
             <div class="features" v-if="selectedFeature(rootFeature.uniqueId)">
                 <wwObject class="feature-background" :ww-object="section.data.featureBackground" ww-category="background"></wwObject>
 
@@ -59,7 +89,7 @@
             </div>
         </div>
 
-        <div class="content">
+        <div class="content hidden-mobile">
             <wwObject class="background" :ww-object="section.data.contentBackground" ww-category="background"></wwObject>
             <div class="offset-bg-image">
                 <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[selectedFeatureIndex].offsetImage"></wwObject>
@@ -75,6 +105,14 @@
 <!-- This is your Javascript -->
 <!-- ✨ Here comes the magic ✨ -->
 <script>
+
+//import VueTouch from 'vue-touch';
+import Vue from 'vue';
+
+const VueTouch = require('vue-touch')
+
+Vue.use(VueTouch, { name: 'v-touch' })
+
 export default {
     name: "__COMPONENT_NAME__",
     props: {
@@ -84,7 +122,8 @@ export default {
     data() {
         return {
             selectedRootFeature: 0,
-            selectedFeatureIndex: 0
+            selectedFeatureIndex: 0,
+            currentIndex: 0
         }
     },
     computed: {
@@ -180,6 +219,10 @@ export default {
         if (needUpdate) {
             this.sectionCtrl.update(this.section);
         }
+    },
+    mounted() {
+        if (this.editMode)
+            this.$refs.swiper.disable('swipe')
     },
     methods: {
         /* wwManager:start */
@@ -486,6 +529,30 @@ export default {
             return newColumn
         },
 
+        nextSlide() {
+            try {
+                let featureLength = this.section.data.rootFeatures[this.selectedRootFeature].features.length - 1
+
+                if (this.currentIndex < featureLength) {
+                    ++this.currentIndex
+                } else {
+                    this.currentIndex = 0
+                }
+            } catch (err) {
+                console.error(err)
+            }
+        },
+
+        prevSlide() {
+            let featureLength = this.section.data.rootFeatures[this.selectedRootFeature].features.length
+
+            if (this.currentIndex > 0) {
+                --this.currentIndex
+            } else {
+                this.currentIndex = featureLength - 1
+            }
+        },
+
         remove(list, options) {
             list.splice(options.index, 1);
             this.sectionCtrl.update(this.section);
@@ -515,6 +582,7 @@ export default {
         selectRootFeature(index) {
             this.selectedRootFeature = index
             this.selectedFeatureIndex = 0
+            this.currentIndex = 0
         }
         /* 
         grey line 
@@ -575,8 +643,8 @@ export default {
             //flex-basis: 20%;
         }
     }
-
     /* wwManager:start */
+
     .contextmenu {
         position: absolute;
         top: 0;
@@ -629,7 +697,7 @@ export default {
             position: relative;
             padding: 10px;
             flex-basis: auto;
-            margin-right: 50px;
+            //margin-right: 50px;
             border-bottom-width: 2px;
             border-bottom-style: solid;
             cursor: pointer;
@@ -665,6 +733,37 @@ export default {
     }
 }
 
+.hidden-mobile {
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+.mobile-wrapper {
+    display: block;
+    position: relative;
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.contextmenu-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: #ef811a;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1;
+}
 .content {
     position: relative;
     background-color: white;
@@ -700,7 +799,7 @@ export default {
 
 .offset-bg-image {
     display: none;
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
         display: block;
         min-width: 365px;
         min-height: 365px;
