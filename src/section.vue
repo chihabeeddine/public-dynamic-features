@@ -28,34 +28,34 @@
                 </wwLayoutColumn>
             </div>
         </div>
-
+        <!-- mobile section the v-touch is to vue component that allows gestures on screen  -->
         <v-touch ref="swiper" @swipeleft="nextSlide()" @swiperight="prevSlide()" class="mobile-wrapper">
             <wwObject class="feature-background" :ww-object="section.data.featureBackground" ww-category="background"></wwObject>
-            <div class="feature-title">
+            <div class="feature-title" :style="{'border-color': computedFeature.selector.borderColor}">
                 <wwContextMenu
                     tag="div"
                     class="contextmenu-right"
                     v-if="editMode"
-                    @ww-add-before="addFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex, 'before')"
-                    @ww-add-after="addFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex, 'after')"
-                    @ww-remove="removeFeature(section.data.rootFeatures[selectedRootFeature].features[currentIndex], currentIndex)"
-                    @ww-options="customizeColor(section.data.rootFeatures[selectedRootFeature].features[currentIndex])"
+                    @ww-add-before="addFeature(computedFeatures, currentIndex, 'before')"
+                    @ww-add-after="addFeature(computedFeatures, currentIndex, 'after')"
+                    @ww-remove="removeFeature(computedFeatures, currentIndex)"
+                    @ww-options="customizeColor(computedFeature)"
                 >
                     <div class="wwi wwi-config"></div>
                 </wwContextMenu>
                 <wwLayoutColumn
                     tag="div"
                     ww-default="ww-text"
-                    :ww-list="section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title"
-                    @ww-add="add(section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title, $event)"
-                    @ww-remove="remove(section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title, $event)"
+                    :ww-list="computedFeature.selector.title"
+                    @ww-add="add(computedFeature.selector.title, $event)"
+                    @ww-remove="remove(computedFeature.selector.title, $event)"
                 >
-                    <wwObject tag="div" v-for="title in section.data.rootFeatures[selectedRootFeature].features[currentIndex].selector.title" :key="title.uniqueId" :ww-object="title"></wwObject>
+                    <wwObject tag="div" v-for="title in computedFeature.selector.title" :key="title.uniqueId" :ww-object="title"></wwObject>
                 </wwLayoutColumn>
             </div>
 
             <div class="feature-content">
-                <wwObject :ww-object="section.data.rootFeatures[selectedRootFeature].features[currentIndex].content"></wwObject>
+                <wwObject :ww-object="computedFeature.content"></wwObject>
             </div>
         </v-touch>
 
@@ -138,6 +138,9 @@ export default {
         },
         computedFeature() {
             return this.section.data.rootFeatures[this.selectedRootFeature].features[this.currentIndex]
+        },
+        computedFeatures() {
+            return this.section.data.rootFeatures[this.selectedRootFeature].features
         }
 
     },
@@ -233,6 +236,7 @@ export default {
             list.splice(options.index, 0, options.wwObject);
             this.sectionCtrl.update(this.section);
         },
+        /* add root element that contain a new section */
         addRootFeature(_index, where) {
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
@@ -281,7 +285,10 @@ export default {
             this.sectionCtrl.update(this.section);
         },
 
+        /* add a new section to the slider */
         addFeature(list, _index, where) {
+            console.log('list:', list)
+
             const up = (where == 'after') ? parseInt(1) : 0;
             const index = _index + up
             const newFeature = {
@@ -315,6 +322,7 @@ export default {
             //this.section.data.features.splice(index, 0, newFeature);
             this.sectionCtrl.update(this.section);
         },
+        /* Open a popup to change the border color */
         async customizeColor(feature) {
             try {
                 wwLib.wwObjectHover.setLock(this);
@@ -335,6 +343,7 @@ export default {
                 console.error(error);
             }
         },
+        /* create a popup forum */
         async edit() {
 
 
@@ -386,6 +395,7 @@ export default {
 
             return options
         },
+        /* basic new columns */
         newColumns() {
             const newColumn = {
                 "config": {
@@ -532,6 +542,7 @@ export default {
             return newColumn
         },
 
+        /* Used on mobile version to swipe */
         nextSlide() {
             try {
                 let featureLength = this.section.data.rootFeatures[this.selectedRootFeature].features.length - 1
@@ -547,16 +558,22 @@ export default {
         },
 
         prevSlide() {
-            let featureLength = this.section.data.rootFeatures[this.selectedRootFeature].features.length
+            try {
+                let featureLength = this.section.data.rootFeatures[this.selectedRootFeature].features.length
 
-            if (this.currentIndex > 0) {
-                --this.currentIndex
-            } else {
-                this.currentIndex = featureLength - 1
+                if (this.currentIndex > 0) {
+                    --this.currentIndex
+                } else {
+                    this.currentIndex = featureLength - 1
+                }
+            } catch (err) {
+                console.error(err)
             }
+
         },
 
         remove(list, options) {
+            console.log('list:', list)
             list.splice(options.index, 1);
             this.sectionCtrl.update(this.section);
         },
@@ -575,9 +592,10 @@ export default {
             this.sectionCtrl.update(this.section);
         },
         /* wwManager:end */
+
+        /* update current selected element */
         selectFeature(index) {
             this.selectedFeatureIndex = index
-
         },
         selectedFeature(id) {
             return id == this.section.data.rootFeatures[this.selectedRootFeature].uniqueId
@@ -587,14 +605,7 @@ export default {
             this.selectedFeatureIndex = 0
             this.currentIndex = 0
         }
-        /* 
-        grey line 
-        mobile version 
-        more marge
-        squred button
 
-        
-        */
     }
 };
 </script>
@@ -674,18 +685,13 @@ export default {
     width: 95%;
     margin-left: 2.5%;
     box-shadow: 0 11px 23px -9px rgba(0, 0, 0, 0.5);
-    @media (min-width: 768px) {
-        //justify-content: space-around;
+    @media (min-width: 992px) {
         width: 80%;
         margin-left: 10%;
     }
-    @media (min-width: 992px) {
-        width: 75%;
-        margin-left: 12.5%;
-    }
     @media (min-width: 1200px) {
-        width: 70%;
-        margin-left: 15%;
+        width: 50%;
+        margin-left: 25%;
     }
     .features {
         display: flex;
@@ -695,7 +701,6 @@ export default {
             min-height: 100px;
             justify-content: space-around;
         }
-
         .feature {
             position: relative;
             padding: 10px;
@@ -739,6 +744,15 @@ export default {
     }
 }
 
+.feature-title {
+    position: relative;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 10%;
+}
+
 .hidden-mobile {
     display: none;
     @media (min-width: 768px) {
@@ -778,20 +792,14 @@ export default {
     width: 95%;
     margin-left: 2.5%;
     min-height: 500px;
-    @media (min-width: 768px) {
-        margin-bottom: 50px;
+
+    @media (min-width: 992px) {
         width: 80%;
         margin-left: 10%;
     }
-    @media (min-width: 992px) {
-        margin-bottom: 50px;
-        width: 75%;
-        margin-left: 12.5%;
-    }
     @media (min-width: 1200px) {
-        margin-bottom: 50px;
-        width: 70%;
-        margin-left: 15%;
+        width: 50%;
+        margin-left: 25%;
     }
 }
 .offset-container {
