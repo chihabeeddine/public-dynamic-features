@@ -1,6 +1,6 @@
 {
   "bg": {
-    "uniqueId": 6614809771,
+    "uniqueId": 10814090100,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
@@ -48,7 +48,7 @@
     "new": false
   },
   "contentBackground": {
-    "uniqueId": 3625761391,
+    "uniqueId": 3731585349,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
@@ -97,7 +97,7 @@
     "new": false
   },
   "offsetContentImage": {
-    "uniqueId": 6858872027,
+    "uniqueId": 966383908,
     "wwVersion": 3,
     "content": {
       "type": "ww-image",
@@ -175,13 +175,13 @@
     {
       "rootTitle": [
         {
-          "uniqueId": 1990882836,
+          "uniqueId": 2680159040,
           "wwVersion": 3,
           "content": {
             "type": "ww-button",
             "data": {
               "text": {
-                "uniqueId": 4932162449,
+                "uniqueId": 3618974293,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -276,7 +276,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 10278938318,
+                "uniqueId": 4231562138,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -321,14 +321,14 @@
                 "new": false
               },
               {
-                "uniqueId": 9147500319,
+                "uniqueId": 3295795762,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 11462546525,
+                        "uniqueId": 14336090196,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -373,7 +373,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 8394827038,
+                        "uniqueId": 12915320462,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -398,7 +398,7 @@
                         "ratio": -1,
                         "paddings": {
                           "xs": {
-                            "top": 0,
+                            "top": 10,
                             "left": 0,
                             "right": 0,
                             "bottom": 0
@@ -429,7 +429,7 @@
                 "ratio": -1,
                 "paddings": {
                   "xs": {
-                    "top": 0,
+                    "top": 10,
                     "left": 0,
                     "right": 0,
                     "bottom": 0
@@ -452,7 +452,7 @@
             "borderColor": "#B7EEEEC8"
           },
           "offsetImage": {
-            "uniqueId": 12179570973,
+            "uniqueId": 3563682313,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -533,7 +533,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 2733640878,
+            "uniqueId": 3178726591,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -541,7 +541,7 @@
                 "config": {
                   "count": 2,
                   "xs": {
-                    "height": 0,
+                    "height": 30,
                     "ignore": false,
                     "cols": [
                       {
@@ -597,7 +597,7 @@
                             "width": 0
                           }
                         ],
-                        "align": "1"
+                        "align": "2"
                       }
                     ],
                     "unit": "%"
@@ -606,9 +606,9 @@
                     "ignore": false,
                     "cols": [
                       {
-                        "align": "1",
-                        "width": "80",
-                        "offset": "15",
+                        "align": "2",
+                        "width": "60",
+                        "offset": "0",
                         "borders": [
                           {
                             "color": "#000000",
@@ -631,12 +631,12 @@
                             "width": 0
                           }
                         ],
-                        "hide": true
+                        "hide": false
                       },
                       {
-                        "align": "1",
-                        "width": "80",
-                        "offset": "15",
+                        "align": "2",
+                        "width": "35",
+                        "offset": "5",
                         "borders": [
                           {
                             "color": "#000000",
@@ -661,7 +661,7 @@
                         ]
                       }
                     ],
-                    "height": 0,
+                    "height": 35,
                     "unit": "%"
                   },
                   "md": {
@@ -736,7 +736,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 5205152846,
+                      "uniqueId": 12547337492,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -785,7 +785,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 11768923706,
+                        "uniqueId": 15160780097,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -831,8 +831,8 @@
                                 "cols": [
                                   {
                                     "align": "1",
-                                    "width": "100",
-                                    "offset": 0,
+                                    "width": "80",
+                                    "offset": "20",
                                     "borders": [
                                       {
                                         "color": "#000000",
@@ -877,7 +877,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 14021993755,
+                                  "uniqueId": 12468167397,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -913,14 +913,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 12656646394,
+                                    "uniqueId": 14420020,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 5329801295,
+                                            "uniqueId": 249283334,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -1040,7 +1040,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 9479626160,
+                      "uniqueId": 3494153431,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -1089,14 +1089,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 4566739628,
+                        "uniqueId": 5101958389,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 4916000118,
+                                "uniqueId": 3383520079,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1131,7 +1131,7 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
@@ -1149,7 +1149,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4347174084,
+                                "uniqueId": 5247281490,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1205,7 +1205,7 @@
                         "ratio": -1,
                         "paddings": {
                           "xs": {
-                            "top": 20,
+                            "top": 0,
                             "left": 0,
                             "right": 0,
                             "bottom": 0
@@ -1217,7 +1217,7 @@
                             "bottom": 0
                           },
                           "sm": {
-                            "top": 20
+                            "top": 0
                           },
                           "lg": null
                         },
@@ -1229,14 +1229,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 14822459284,
+                        "uniqueId": 11932573083,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 5560042109,
+                                "uniqueId": 9236903219,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1271,7 +1271,7 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
@@ -1289,7 +1289,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4583407648,
+                                "uniqueId": 2214459769,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1365,14 +1365,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 10588310731,
+                        "uniqueId": 1397823068,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 7401733518,
+                                "uniqueId": 10201790702,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1407,7 +1407,7 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
@@ -1425,7 +1425,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 12311132595,
+                                "uniqueId": 6322912122,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1501,14 +1501,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 9399865954,
+                        "uniqueId": 8899206289,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 3301531297,
+                                "uniqueId": 1306588922,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1543,7 +1543,7 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
@@ -1561,7 +1561,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 13991075419,
+                                "uniqueId": 2593403202,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1637,14 +1637,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 12097642231,
+                        "uniqueId": 11537748176,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 11568245663,
+                                "uniqueId": 10157091472,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -1679,7 +1679,7 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
@@ -1697,7 +1697,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 13012486766,
+                                "uniqueId": 9916419572,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -1787,7 +1787,7 @@
                 "top": 0,
                 "left": 0,
                 "right": 0,
-                "bottom": 30
+                "bottom": 0
               },
               "md": {
                 "top": 43,
@@ -1810,7 +1810,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 6737999053,
+                "uniqueId": 15199286930,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -1855,14 +1855,14 @@
                 "new": false
               },
               {
-                "uniqueId": 1875607006,
+                "uniqueId": 14103887061,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 7203429234,
+                        "uniqueId": 3757998390,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -1907,7 +1907,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 9372802781,
+                        "uniqueId": 10705595861,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -1986,7 +1986,7 @@
             "borderColor": "#FCA1B2C8"
           },
           "offsetImage": {
-            "uniqueId": 4969313099,
+            "uniqueId": 3070745548,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -2067,7 +2067,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 12859874022,
+            "uniqueId": 5049163707,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -2270,7 +2270,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 8973668376,
+                      "uniqueId": 7807085022,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2319,7 +2319,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 11758928191,
+                        "uniqueId": 12801181163,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -2411,7 +2411,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 10684324567,
+                                  "uniqueId": 3485841576,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -2447,14 +2447,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 5114412234,
+                                    "uniqueId": 13983170838,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 8781515906,
+                                            "uniqueId": 8930484382,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -2574,7 +2574,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 12859940409,
+                      "uniqueId": 12293775260,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -2623,14 +2623,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 6191406329,
+                        "uniqueId": 6508757167,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 4290911843,
+                                "uniqueId": 8107286605,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -2683,7 +2683,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 10630613271,
+                                "uniqueId": 3300023022,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -2763,14 +2763,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 12771221747,
+                        "uniqueId": 13280560065,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 9000640981,
+                                "uniqueId": 15399266349,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -2823,7 +2823,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 15116333896,
+                                "uniqueId": 9716343636,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -2899,14 +2899,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 15497113732,
+                        "uniqueId": 11692478723,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 5146735117,
+                                "uniqueId": 4294389956,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -2959,7 +2959,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 432419377,
+                                "uniqueId": 11549069903,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -3035,14 +3035,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 1984957282,
+                        "uniqueId": 8728545212,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 9615731926,
+                                "uniqueId": 9914658528,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -3095,7 +3095,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 4135468039,
+                                "uniqueId": 7004429249,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -3171,14 +3171,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 11426358525,
+                        "uniqueId": 5356119667,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 7173705949,
+                                "uniqueId": 809643999,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -3231,7 +3231,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 7519553779,
+                                "uniqueId": 10367779401,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -3344,7 +3344,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 1322832226,
+                "uniqueId": 1317495889,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -3389,14 +3389,14 @@
                 "new": false
               },
               {
-                "uniqueId": 15080939503,
+                "uniqueId": 5264548583,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 15220879966,
+                        "uniqueId": 4453797491,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -3441,7 +3441,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 10606633360,
+                        "uniqueId": 9870860905,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -3520,7 +3520,7 @@
             "borderColor": "#575174"
           },
           "offsetImage": {
-            "uniqueId": 5896202303,
+            "uniqueId": 4315509465,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -3601,7 +3601,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 5999948707,
+            "uniqueId": 4660192039,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -3804,7 +3804,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 3574850615,
+                      "uniqueId": 14095462557,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -3853,7 +3853,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 10754496540,
+                        "uniqueId": 15280338015,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -3945,7 +3945,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 14865405157,
+                                  "uniqueId": 9759774773,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -3981,14 +3981,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 5751084550,
+                                    "uniqueId": 14503397440,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 15204010645,
+                                            "uniqueId": 2100203363,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -4108,7 +4108,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 2671489973,
+                      "uniqueId": 13072721366,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -4157,14 +4157,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 14134554551,
+                        "uniqueId": 12532069882,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 10795132014,
+                                "uniqueId": 13427513870,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -4217,7 +4217,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 11311265500,
+                                "uniqueId": 9764397737,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4297,14 +4297,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 7190571359,
+                        "uniqueId": 14546588320,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 1015549376,
+                                "uniqueId": 15375556474,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -4357,7 +4357,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 2576232263,
+                                "uniqueId": 14036135686,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4433,14 +4433,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 2608492135,
+                        "uniqueId": 794210530,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 3355876209,
+                                "uniqueId": 693130823,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -4493,7 +4493,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 11437339232,
+                                "uniqueId": 6411346986,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4569,14 +4569,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 6185551438,
+                        "uniqueId": 2690218419,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 9657473486,
+                                "uniqueId": 7487505525,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -4629,7 +4629,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 2396102149,
+                                "uniqueId": 2698590723,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4705,14 +4705,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 5680506704,
+                        "uniqueId": 14464895131,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 11522858849,
+                                "uniqueId": 10465247610,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -4765,7 +4765,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 5995716229,
+                                "uniqueId": 3158708264,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -4880,13 +4880,13 @@
     {
       "rootTitle": [
         {
-          "uniqueId": 10552104688,
+          "uniqueId": 14933299989,
           "wwVersion": 3,
           "content": {
             "type": "ww-button",
             "data": {
               "text": {
-                "uniqueId": 12420342709,
+                "uniqueId": 12191215489,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -4981,7 +4981,7 @@
           "selector": {
             "title": [
               {
-                "uniqueId": 10399540272,
+                "uniqueId": 1568211643,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-text",
@@ -5026,14 +5026,14 @@
                 "new": false
               },
               {
-                "uniqueId": 11816714731,
+                "uniqueId": 430468012,
                 "wwVersion": 3,
                 "content": {
                   "type": "ww-row",
                   "data": {
                     "wwObjects": [
                       {
-                        "uniqueId": 3586340716,
+                        "uniqueId": 411747573,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -5078,7 +5078,7 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 10983529653,
+                        "uniqueId": 9427271967,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-text",
@@ -5134,7 +5134,7 @@
                 "ratio": -1,
                 "paddings": {
                   "xs": {
-                    "top": 0,
+                    "top": 10,
                     "left": 0,
                     "right": 0,
                     "bottom": 0
@@ -5157,7 +5157,7 @@
             "borderColor": "#B7EEEEC8"
           },
           "offsetImage": {
-            "uniqueId": 5010714969,
+            "uniqueId": 11597989353,
             "wwVersion": 3,
             "content": {
               "type": "ww-image",
@@ -5218,7 +5218,7 @@
                 "bottom": 0
               },
               "md": {
-                "top": 46,
+                "top": 106,
                 "left": 0,
                 "right": 0,
                 "bottom": 0
@@ -5232,7 +5232,7 @@
             "new": false
           },
           "content": {
-            "uniqueId": 14332950979,
+            "uniqueId": 8224167418,
             "wwVersion": 3,
             "content": {
               "type": "ww-columns",
@@ -5240,7 +5240,7 @@
                 "config": {
                   "count": 2,
                   "xs": {
-                    "height": 0,
+                    "height": 30,
                     "ignore": false,
                     "cols": [
                       {
@@ -5268,7 +5268,7 @@
                             "width": 0
                           }
                         ],
-                        "align": "1",
+                        "align": "2",
                         "hide": true
                       },
                       {
@@ -5296,7 +5296,7 @@
                             "width": 0
                           }
                         ],
-                        "align": "1"
+                        "align": "2"
                       }
                     ],
                     "unit": "%"
@@ -5305,9 +5305,9 @@
                     "ignore": false,
                     "cols": [
                       {
-                        "align": "1",
-                        "width": "80",
-                        "offset": "15",
+                        "align": "2",
+                        "width": "60",
+                        "offset": "0",
                         "borders": [
                           {
                             "color": "#000000",
@@ -5330,12 +5330,12 @@
                             "width": 0
                           }
                         ],
-                        "hide": true
+                        "hide": false
                       },
                       {
-                        "align": "1",
-                        "width": "80",
-                        "offset": "15",
+                        "align": "2",
+                        "width": "35",
+                        "offset": "5",
                         "borders": [
                           {
                             "color": "#000000",
@@ -5360,14 +5360,14 @@
                         ]
                       }
                     ],
-                    "height": 0,
+                    "height": 35,
                     "unit": "%"
                   },
                   "md": {
                     "ignore": false,
                     "cols": [
                       {
-                        "align": "1",
+                        "align": "2",
                         "width": "60",
                         "offset": 0,
                         "borders": [
@@ -5394,9 +5394,9 @@
                         ]
                       },
                       {
-                        "align": "1",
-                        "width": "40",
-                        "offset": 0,
+                        "align": "2",
+                        "width": "30",
+                        "offset": "10",
                         "borders": [
                           {
                             "color": "#000000",
@@ -5421,13 +5421,68 @@
                         ]
                       }
                     ],
-                    "height": 0,
+                    "height": 70,
                     "unit": "%"
                   },
                   "lg": {
-                    "ignore": true,
-                    "cols": null,
-                    "height": 0,
+                    "ignore": false,
+                    "cols": [
+                      {
+                        "align": "2",
+                        "width": "60",
+                        "offset": 0,
+                        "borders": [
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          },
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          },
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          },
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          }
+                        ]
+                      },
+                      {
+                        "align": "2",
+                        "width": "30",
+                        "offset": "10",
+                        "borders": [
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          },
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          },
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          },
+                          {
+                            "color": "#000000",
+                            "style": "solid",
+                            "width": 0
+                          }
+                        ]
+                      }
+                    ],
+                    "height": 50,
                     "unit": "%"
                   },
                   "height": null
@@ -5435,7 +5490,7 @@
                 "columns": [
                   {
                     "background": {
-                      "uniqueId": 5598791835,
+                      "uniqueId": 67793712,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -5484,7 +5539,7 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 4085888698,
+                        "uniqueId": 4568371095,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-columns",
@@ -5530,8 +5585,8 @@
                                 "cols": [
                                   {
                                     "align": "1",
-                                    "width": "100",
-                                    "offset": 0,
+                                    "width": "80",
+                                    "offset": "20",
                                     "borders": [
                                       {
                                         "color": "#000000",
@@ -5560,14 +5615,70 @@
                                 "unit": "%"
                               },
                               "md": {
-                                "ignore": true,
-                                "cols": null,
+                                "ignore": false,
+                                "cols": [
+                                  {
+                                    "align": "1",
+                                    "width": "80",
+                                    "offset": "20",
+                                    "borders": [
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      },
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      },
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      },
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      }
+                                    ]
+                                  }
+                                ],
                                 "height": 0,
                                 "unit": "%"
                               },
                               "lg": {
-                                "ignore": true,
-                                "cols": null,
+                                "ignore": false,
+                                "cols": [
+                                  {
+                                    "align": "2",
+                                    "width": "80",
+                                    "offset": "20",
+                                    "borders": [
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      },
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      },
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      },
+                                      {
+                                        "color": "#000000",
+                                        "style": "solid",
+                                        "width": 0
+                                      }
+                                    ]
+                                  }
+                                ],
                                 "height": 0,
                                 "unit": "%"
                               },
@@ -5576,7 +5687,7 @@
                             "columns": [
                               {
                                 "background": {
-                                  "uniqueId": 12914500520,
+                                  "uniqueId": 1522494201,
                                   "link": {
                                     "data": {},
                                     "type": "none"
@@ -5612,14 +5723,14 @@
                                 },
                                 "wwObjects": [
                                   {
-                                    "uniqueId": 4419522079,
+                                    "uniqueId": 13959743740,
                                     "wwVersion": 3,
                                     "content": {
                                       "type": "ww-row",
                                       "data": {
                                         "wwObjects": [
                                           {
-                                            "uniqueId": 13746024103,
+                                            "uniqueId": 5807095452,
                                             "wwVersion": 3,
                                             "content": {
                                               "type": "ww-text",
@@ -5681,10 +5792,10 @@
                                         "bottom": 0
                                       },
                                       "md": {
-                                        "top": 25,
+                                        "top": 15,
                                         "left": 29,
                                         "right": 61,
-                                        "bottom": 25
+                                        "bottom": 15
                                       },
                                       "sm": {
                                         "bottom": 0
@@ -5716,16 +5827,16 @@
                             "bottom": 0
                           },
                           "md": {
-                            "top": 30,
-                            "left": 85,
-                            "right": 33,
+                            "top": 0,
+                            "left": 0,
+                            "right": 0,
                             "bottom": 0
                           },
                           "sm": null,
                           "lg": {
-                            "left": 211,
-                            "right": 250,
-                            "top": 65
+                            "left": 0,
+                            "right": 0,
+                            "top": 0
                           }
                         },
                         "hidden": false,
@@ -5739,7 +5850,7 @@
                   },
                   {
                     "background": {
-                      "uniqueId": 14411548516,
+                      "uniqueId": 12789761094,
                       "wwVersion": 3,
                       "content": {
                         "type": "ww-color",
@@ -5788,14 +5899,14 @@
                     },
                     "wwObjects": [
                       {
-                        "uniqueId": 2995176648,
+                        "uniqueId": 14081611327,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 12040855003,
+                                "uniqueId": 7822656733,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -5816,8 +5927,8 @@
                                         "s": 0,
                                         "c": ""
                                       },
-                                      "size": 30,
-                                      "fontSize": 15
+                                      "size": 24,
+                                      "fontSize": 11
                                     }
                                   }
                                 },
@@ -5830,12 +5941,12 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
                                     "top": 0,
-                                    "left": 35,
+                                    "left": 0,
                                     "right": 0,
                                     "bottom": 0
                                   }
@@ -5848,7 +5959,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 1048803214,
+                                "uniqueId": 14007982479,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -5904,19 +6015,19 @@
                         "ratio": -1,
                         "paddings": {
                           "xs": {
-                            "top": 20,
+                            "top": 0,
                             "left": 0,
                             "right": 0,
                             "bottom": 0
                           },
                           "md": {
-                            "top": 38,
+                            "top": 0,
                             "left": 0,
                             "right": 0,
                             "bottom": 0
                           },
                           "sm": {
-                            "top": 20
+                            "top": 0
                           },
                           "lg": null
                         },
@@ -5928,14 +6039,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 7150448357,
+                        "uniqueId": 6056298773,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 10055940082,
+                                "uniqueId": 5444653057,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -5956,8 +6067,8 @@
                                         "s": 0,
                                         "c": ""
                                       },
-                                      "size": 30,
-                                      "fontSize": 15
+                                      "size": 24,
+                                      "fontSize": 11
                                     }
                                   }
                                 },
@@ -5970,12 +6081,12 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
                                     "top": 0,
-                                    "left": 35,
+                                    "left": 0,
                                     "right": 0,
                                     "bottom": 0
                                   }
@@ -5988,7 +6099,7 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 14831475686,
+                                "uniqueId": 15420732955,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
@@ -6064,14 +6175,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 1330868954,
+                        "uniqueId": 944868731,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 13669803146,
+                                "uniqueId": 12507120356,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -6092,8 +6203,8 @@
                                         "s": 0,
                                         "c": ""
                                       },
-                                      "size": 30,
-                                      "fontSize": 15
+                                      "size": 24,
+                                      "fontSize": 11
                                     }
                                   }
                                 },
@@ -6106,12 +6217,12 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
                                     "top": 0,
-                                    "left": 35,
+                                    "left": 0,
                                     "right": 0,
                                     "bottom": 0
                                   }
@@ -6124,14 +6235,14 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 14701278592,
+                                "uniqueId": 10635820410,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
                                   "data": {
                                     "text": {
                                       "fr": "Nouveau texte",
-                                      "en": "<font face=\"Lato, Lato\">Maecenas sed leo finibus</font><br>"
+                                      "en": "<font face=\"Lato, Lato\">uspendisse finibus rhoncus orci </font><br>"
                                     },
                                     "tag": "div",
                                     "align": "",
@@ -6200,14 +6311,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 13124078589,
+                        "uniqueId": 15575600642,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 4184055804,
+                                "uniqueId": 3677252913,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -6228,8 +6339,8 @@
                                         "s": 0,
                                         "c": ""
                                       },
-                                      "size": 30,
-                                      "fontSize": 15
+                                      "size": 24,
+                                      "fontSize": 11
                                     }
                                   }
                                 },
@@ -6242,12 +6353,12 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
                                     "top": 0,
-                                    "left": 35,
+                                    "left": 0,
                                     "right": 0,
                                     "bottom": 0
                                   }
@@ -6260,14 +6371,14 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 8473373781,
+                                "uniqueId": 3318014594,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
                                   "data": {
                                     "text": {
                                       "fr": "Nouveau texte",
-                                      "en": "<font face=\"Lato, Lato\">Maecenas sed leo finibus</font><br>"
+                                      "en": "<font face=\"Lato, Lato\">Praesent et enim volutpat</font><br>"
                                     },
                                     "tag": "div",
                                     "align": "",
@@ -6336,14 +6447,14 @@
                         "new": false
                       },
                       {
-                        "uniqueId": 6472203704,
+                        "uniqueId": 2732075235,
                         "wwVersion": 3,
                         "content": {
                           "type": "ww-row",
                           "data": {
                             "wwObjects": [
                               {
-                                "uniqueId": 15134125073,
+                                "uniqueId": 5760376211,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-icon",
@@ -6364,8 +6475,8 @@
                                         "s": 0,
                                         "c": ""
                                       },
-                                      "size": 30,
-                                      "fontSize": 15
+                                      "size": 24,
+                                      "fontSize": 11
                                     }
                                   }
                                 },
@@ -6378,12 +6489,12 @@
                                   "xs": {
                                     "top": 0,
                                     "left": 0,
-                                    "right": 0,
+                                    "right": 15,
                                     "bottom": 0
                                   },
                                   "md": {
                                     "top": 0,
-                                    "left": 35,
+                                    "left": 0,
                                     "right": 0,
                                     "bottom": 0
                                   }
@@ -6396,14 +6507,14 @@
                                 "new": false
                               },
                               {
-                                "uniqueId": 7184278776,
+                                "uniqueId": 762908387,
                                 "wwVersion": 3,
                                 "content": {
                                   "type": "ww-text",
                                   "data": {
                                     "text": {
                                       "fr": "Nouveau texte",
-                                      "en": "<font face=\"Lato, Lato\">Maecenas sed leo finibus</font><br>"
+                                      "en": "<font face=\"Lato, Lato\">Aliquam erat volutpat.</font><br>"
                                     },
                                     "tag": "div",
                                     "align": "",
@@ -6486,10 +6597,10 @@
                 "top": 0,
                 "left": 0,
                 "right": 0,
-                "bottom": 30
+                "bottom": 0
               },
               "md": {
-                "top": 43,
+                "top": 0,
                 "left": 0,
                 "right": 0,
                 "bottom": 0
@@ -6510,7 +6621,7 @@
     }
   ],
   "featureBackground": {
-    "uniqueId": 14461335975,
+    "uniqueId": 2782730722,
     "wwVersion": 3,
     "content": {
       "type": "ww-color",
@@ -6540,8 +6651,8 @@
     "paddings": {
       "xs": {
         "top": 0,
-        "left": 0,
-        "right": 0,
+        "left": 5,
+        "right": 5,
         "bottom": 0
       },
       "md": {
@@ -6549,7 +6660,9 @@
         "left": 0,
         "right": 0,
         "bottom": 0
-      }
+      },
+      "sm": {},
+      "lg": null
     },
     "hidden": false,
     "tags": [],
