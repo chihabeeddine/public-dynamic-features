@@ -357,7 +357,8 @@ export default {
         },
         removeFeature(list, index) {
             try {
-                this.initPageIndex();
+                this.selectedFeatureIndex = 0
+                this.currentIndex = 0
                 list.splice(index, 1);
                 if (!list.length) {
                     this.addFeature(list, 0, 'after');
