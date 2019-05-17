@@ -57,7 +57,19 @@
             <div class="feature-content">
                 <wwObject :ww-object="computedFeature.content"></wwObject>
             </div>
+            <div class="content-dots-wrapper">
+                <li class="content-dot" :style="{'background':computedFeature.selector.borderColor}" :class="{'passive-dot': currentIndex != 0}">
+                    <div class="dot" @click="switchToIndex(currentIndex, 0)"></div>
+                </li>
+                <li class="content-dot" :style="{'background':computedFeature.selector.borderColor}" :class="{'passive-dot': currentIndex != 1}">
+                    <div class="dot" @click="switchToIndex(currentIndex, 1)"></div>
+                </li>
+                <li class="content-dot" :style="{'background':computedFeature.selector.borderColor}" :class="{'passive-dot': currentIndex != 2}">
+                    <div class="dot" @click="switchToIndex(currentIndex, 2)"></div>
+                </li>
+            </div>
         </v-touch>
+        <!-- add dots for mobile versionsdn -->
         <!-- Tablet and bigger -->
 
         <div class="section-wrapper">
@@ -259,8 +271,6 @@ export default {
         },
         /* create a popup forum */
         async edit() {
-
-
             wwLib.wwPopups.addStory('WWTIP_CUSTOM', {
                 title: {
                     en: 'Color picker',
@@ -283,7 +293,6 @@ export default {
                                 fr: 'Changer la couleur de la bordure'
                             }
                         },
-
                     ]
                 },
                 buttons: {
@@ -298,15 +307,12 @@ export default {
                 }
             })
 
-
-
             let options = {
                 firstPage: 'WWTIP_CUSTOM',
                 data: {
                     wwObject: this.wwObject,
                 }
             }
-
             return options
         },
 
@@ -385,6 +391,13 @@ export default {
             this.selectedRootFeature = index
             this.selectedFeatureIndex = 0
             this.currentIndex = 0
+        },
+        switchToIndex(index, position) {
+            console.log('this.computedFeatures.length:', this.computedFeatures.length)
+            if (position < this.computedFeatures.length && index != position) {
+                this.currentIndex = position
+            }
+
         }
 
     }
@@ -496,6 +509,29 @@ export default {
     cursor: pointer;
     width: 80%;
     margin-left: 10%;
+}
+
+.content-dots-wrapper {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.content-dot {
+    margin-right: 15px;
+}
+
+.dot {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    pointer-events: all;
+}
+.passive-dot {
+    opacity: 0.4;
 }
 
 .hidden-mobile {
