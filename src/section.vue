@@ -57,15 +57,16 @@
             <div class="feature-content">
                 <wwObject :ww-object="computedFeature.content"></wwObject>
             </div>
+
             <div class="content-dots-wrapper">
-                <li class="content-dot" :style="{'background':computedFeature.selector.borderColor}" :class="{'passive-dot': currentIndex != 0}">
-                    <div class="dot" @click="switchToIndex(currentIndex, 0)"></div>
-                </li>
-                <li class="content-dot" :style="{'background':computedFeature.selector.borderColor}" :class="{'passive-dot': currentIndex != 1}">
-                    <div class="dot" @click="switchToIndex(currentIndex, 1)"></div>
-                </li>
-                <li class="content-dot" :style="{'background':computedFeature.selector.borderColor}" :class="{'passive-dot': currentIndex != 2}">
-                    <div class="dot" @click="switchToIndex(currentIndex, 2)"></div>
+                <li
+                    v-for="(dot, index) in computedFeatures"
+                    class="content-dot"
+                    :style="{'background':computedFeature.selector.borderColor}"
+                    :class="{'passive-dot': currentIndex != index}"
+                    :key="dot.uniqueId"
+                >
+                    <div class="dot" @click="switchToIndex(currentIndex, index)"></div>
                 </li>
             </div>
         </v-touch>
@@ -125,7 +126,6 @@
 <!-- ✨ Here comes the magic ✨ -->
 <script>
 
-import Vue from 'vue';
 import { getNewFeature } from "./defaultFeature"
 import { getNewRootFeature } from "./defaultFeature"
 
@@ -357,6 +357,7 @@ export default {
         },
         removeFeature(list, index) {
             try {
+                this.initPageIndex();
                 list.splice(index, 1);
                 if (!list.length) {
                     this.addFeature(list, 0, 'after');
@@ -369,6 +370,7 @@ export default {
 
         removeRootFeature(index) {
             try {
+                this.initPageIndex()
                 this.section.data.rootFeatures.splice(index, 1);
                 if (!this.section.data.rootFeatures.length) {
                     this.addRootFeature(0, 'after');
@@ -393,13 +395,15 @@ export default {
             this.currentIndex = 0
         },
         switchToIndex(index, position) {
-            console.log('this.computedFeatures.length:', this.computedFeatures.length)
             if (position < this.computedFeatures.length && index != position) {
                 this.currentIndex = position
             }
-
+        },
+        initPageIndex() {
+            this.selectedRootFeature = 0
+            this.selectedFeatureIndex = 0
+            this.currentIndex = 0
         }
-
     }
 };
 </script>
@@ -465,73 +469,65 @@ export default {
         width: 50%;
         margin-left: 25%;
     }
-}
-
-.feature-wrapper {
-    position: relative;
-    width: 95%;
-    width: 95%;
-    margin-left: 2.5%;
-    .features {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        @media (min-width: 768px) {
-            min-height: 100px;
-            justify-content: space-around;
-        }
-        .feature {
-            position: relative;
-            padding: 10px;
-            flex-basis: auto;
-            border-bottom-width: 2px;
-            border-bottom-style: solid;
-            cursor: pointer;
+    .feature-wrapper {
+        position: relative;
+        width: 95%;
+        width: 95%;
+        margin-left: 2.5%;
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             @media (min-width: 768px) {
-                min-width: 200px;
+                min-height: 100px;
+                justify-content: space-around;
             }
+            .feature {
+                position: relative;
+                padding: 10px;
+                flex-basis: auto;
+                border-bottom-width: 2px;
+                border-bottom-style: solid;
+                cursor: pointer;
+                @media (min-width: 768px) {
+                    min-width: 200px;
+                }
 
-            @media (min-width: 1200px) {
-                min-width: 250px;
+                @media (min-width: 1200px) {
+                    min-width: 250px;
+                }
             }
-        }
-        .not-selected {
-            opacity: 0.4;
-            border-bottom: 0px;
+            .not-selected {
+                opacity: 0.4;
+                border-bottom: 0px;
+            }
         }
     }
-}
-
-.feature-title {
-    position: relative;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    cursor: pointer;
-    width: 80%;
-    margin-left: 10%;
-}
-
-.content-dots-wrapper {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.content-dot {
-    margin-right: 15px;
-}
-
-.dot {
-    cursor: pointer;
-    width: 15px;
-    height: 15px;
-    border-radius: 100%;
-    pointer-events: all;
-}
-.passive-dot {
-    opacity: 0.4;
+    .content {
+        position: relative;
+        margin-bottom: 50px;
+        width: 95%;
+        margin-left: 2.5%;
+        min-height: 500px;
+        .offset-bg-image {
+            display: none;
+            @media (min-width: 768px) {
+                display: block;
+                min-width: 365px;
+                min-height: 365px;
+                position: absolute;
+                transform: translateX(-30%);
+            }
+        }
+        .offset-container {
+            width: 100%;
+            @media (min-width: 768px) {
+                position: absolute;
+                transform: translateX(-9%);
+                width: 110%;
+            }
+        }
+    }
 }
 
 .hidden-mobile {
@@ -546,11 +542,40 @@ export default {
     @media (min-width: 768px) {
         display: none;
     }
+    .feature-title {
+        position: relative;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        cursor: pointer;
+        width: 80%;
+        margin-left: 10%;
+    }
+    .feature-content {
+        margin-bottom: 10%;
+    }
+    .content-dots-wrapper {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 15px;
+
+        .content-dot {
+            margin-right: 15px;
+            .dot {
+                cursor: pointer;
+                width: 15px;
+                height: 15px;
+                border-radius: 100%;
+                pointer-events: all;
+            }
+        }
+        .passive-dot {
+            opacity: 0.4;
+        }
+    }
 }
 
-.feature-content {
-    margin-bottom: 10%;
-}
 /* wwManager:start */
 .contextmenu-left {
     position: absolute;
@@ -588,30 +613,4 @@ export default {
     z-index: 1;
 }
 /* wwManager:end */
-.content {
-    position: relative;
-    margin-bottom: 50px;
-    width: 95%;
-    margin-left: 2.5%;
-    min-height: 500px;
-}
-.offset-container {
-    width: 100%;
-    @media (min-width: 768px) {
-        position: absolute;
-        transform: translateX(-9%);
-        width: 110%;
-    }
-}
-
-.offset-bg-image {
-    display: none;
-    @media (min-width: 768px) {
-        display: block;
-        min-width: 365px;
-        min-height: 365px;
-        position: absolute;
-        transform: translateX(-30%);
-    }
-}
 </style>
