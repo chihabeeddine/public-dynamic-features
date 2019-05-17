@@ -562,11 +562,11 @@ export default {
 
         .content-dot {
             margin-right: 15px;
+            border-radius: 100%;
             .dot {
                 cursor: pointer;
                 width: 15px;
                 height: 15px;
-                border-radius: 100%;
                 pointer-events: all;
             }
         }
